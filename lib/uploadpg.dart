@@ -116,9 +116,17 @@ class _UploadpgState extends State<Uploadpg> {
             height: MediaQuery.of(context).size.height / 2,
             child: ListView(
               children: [
-                const Padding(
+                Padding(
                   padding: EdgeInsets.all(8.0),
-                  child: Text("School Info"),
+                  child: Text(
+                    "School Info",
+                    style: TextStyle(
+                        decoration: TextDecoration.none,
+                        fontFamily: monb,
+                        fontWeight: FontWeight.bold,
+                        color: const Color(0xFF448CF3),
+                        fontSize: 16.h),
+                  ),
                 ),
                 Align(
                   alignment: Alignment.centerLeft,
@@ -130,7 +138,33 @@ class _UploadpgState extends State<Uploadpg> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text("School Name"),
+                          RichText(
+                text: TextSpan(
+                  style: DefaultTextStyle.of(context).style,
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: 'School Name',
+                      style: TextStyle(
+                        decoration: TextDecoration.none,
+                        fontFamily: rubr,
+                        color: const Color(0xff828282),
+                        fontWeight: FontWeight.w600,
+                        fontSize: 15.h,
+                      ),
+                    ),
+                    TextSpan(
+                      text: '*',
+                      style: TextStyle(
+                        decoration: TextDecoration.none,
+                        fontFamily: rubm,
+                        color: Color.fromARGB(255, 244, 17, 17),
+                        fontSize: 15.h,
+                      ),
+                    ),
+                    
+],
+                ),
+              ),
                           SizedBox(
                             height: 5.h,
                           ),

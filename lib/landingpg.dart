@@ -128,7 +128,7 @@ class _landingpgState extends State<landingpg> {
                           const BorderSide(color: Color(0xFFE8E8E8), width: 2)),
                   child: Column(children: [
                     Padding(
-                      padding: const EdgeInsets.only(top: 30),
+                      padding:  EdgeInsets.only(top: 30.h),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -175,14 +175,11 @@ class _landingpgState extends State<landingpg> {
                                             SizedBox(
                                               width: 5.w,
                                             ),
-                                            Expanded(
-                                              child: Text(
-                                                FeaturesList[index],
-                                                style: TextStyle(
-                                                    fontSize: 14.h,
-                                                    fontWeight:
-                                                        FontWeight.w700),
-                                              ),
+                                            Text(
+                                              FeaturesList[index],
+                                              style: TextStyle(
+                                                  fontSize: 10.h,
+                                                  fontWeight: FontWeight.w700),
                                             )
                                           ],
                                         )),
