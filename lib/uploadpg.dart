@@ -51,6 +51,7 @@ class _UploadpgState extends State<Uploadpg> {
                     style: TextStyle(
                         decoration: TextDecoration.none,
                         fontSize: 30.0.h,
+                        fontWeight: FontWeight.bold,
                         fontFamily: rubm),
                     gradient: const LinearGradient(colors: [
                       Color(0xFF25D0DE),
@@ -60,9 +61,11 @@ class _UploadpgState extends State<Uploadpg> {
                   GradientText(
                     'SCHOOL\'S CBSE RESULTS',
                     style: TextStyle(
-                        decoration: TextDecoration.none,
-                        fontSize: 30.0.h,
-                        fontFamily: rubm),
+                      decoration: TextDecoration.none,
+                      fontSize: 30.0.h,
+                      fontFamily: rubm,
+                      fontWeight: FontWeight.bold,
+                    ),
                     gradient: const LinearGradient(colors: [
                       Color(0xFF25D0DE),
                       Color(0xFFF638F7),
@@ -910,6 +913,51 @@ class _UploadpgState extends State<Uploadpg> {
                           SizedBox(
                             height: 25.h,
                           ),
+                          Container(
+                            width: 200.w,
+                            height: 100.h,
+                            decoration: BoxDecoration(color: Colors.white),
+                            child: Column(
+                              children: [
+                                SizedBox(
+                                  height: 10.h,
+                                ),
+                                Text(
+                                  'Drop a CSV file or',
+                                  style: TextStyle(
+                                      decoration: TextDecoration.none,
+                                      fontFamily: 'Muli',
+                                      fontWeight: FontWeight.bold,
+                                      color: const Color(0xFF303030),
+                                      fontSize: 13.h),
+                                ),
+                                SizedBox(
+                                  height: 15.h,
+                                ),
+                                ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                      side: BorderSide(),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(15.0),
+                                      ),
+                                      fixedSize: Size(80.w, 30.h),
+                                      backgroundColor: const Color(0xFFEC8D3C)),
+                                  onPressed: () {},
+                                  child: Row(
+                                    children: [
+                                      Image.asset(impo),
+                                      Text(
+                                        'Import',
+                                        style: TextStyle(
+                                            fontFamily: rubm, fontSize: 14.h),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )
                         ],
                       ),
                     ),

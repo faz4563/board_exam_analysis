@@ -60,6 +60,7 @@ class _landingpgState extends State<landingpg> {
                     style: TextStyle(
                         decoration: TextDecoration.none,
                         fontSize: 30.0.h,
+                        fontWeight: FontWeight.bold,
                         fontFamily: rubm),
                     gradient: const LinearGradient(colors: [
                       Color(0xFF25D0DE),
@@ -70,6 +71,7 @@ class _landingpgState extends State<landingpg> {
                     'SCHOOL\'S CBSE RESULTS',
                     style: TextStyle(
                         decoration: TextDecoration.none,
+                        fontWeight: FontWeight.bold,
                         fontSize: 30.0.h,
                         fontFamily: rubm),
                     gradient: const LinearGradient(colors: [
@@ -213,6 +215,10 @@ class _landingpgState extends State<landingpg> {
                 ),
               ),
               SizedBox(height: 10.h),
+              //
+              //
+              //
+
               GlowingText(text: 'We\'d Love To Hear From You'),
               SizedBox(height: 5.h),
               Text(
