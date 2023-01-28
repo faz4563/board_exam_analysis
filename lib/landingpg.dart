@@ -200,7 +200,7 @@ class _landingpgState extends State<landingpg> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const uploadpg()));
+                                builder: (context) => const Uploadpg()));
                       },
                       child: Text(
                         'Generate Report',

@@ -1,0 +1,108 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "board_exam_analysis",
+            "cwd": "Neverskip Internship\\board_exam_analysis",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "board_exam_analysis (profile mode)",
+            "cwd": "Neverskip Internship\\board_exam_analysis",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "board_exam_analysis (release mode)",
+            "cwd": "Neverskip Internship\\board_exam_analysis",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "mdh",
+            "cwd": "Neverskip Internship\\mdh",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "mdh (profile mode)",
+            "cwd": "Neverskip Internship\\mdh",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "mdh (release mode)",
+            "cwd": "Neverskip Internship\\mdh",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "learningwelcome",
+            "cwd": "Neverskip Internship\\Learning_Loginandsignup\\learningwelcome",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "learningwelcome (profile mode)",
+            "cwd": "Neverskip Internship\\Learning_Loginandsignup\\learningwelcome",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "learningwelcome (release mode)",
+            "cwd": "Neverskip Internship\\Learning_Loginandsignup\\learningwelcome",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "board_exam_analysis",
+            "cwd": "$Recycle.Bin\\S-1-5-21-3698608581-2310461473-4245526587-1001\\$RB6QA6T\\board_exam_analysis",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "board_exam_analysis (profile mode)",
+            "cwd": "$Recycle.Bin\\S-1-5-21-3698608581-2310461473-4245526587-1001\\$RB6QA6T\\board_exam_analysis",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "board_exam_analysis (release mode)",
+            "cwd": "$Recycle.Bin\\S-1-5-21-3698608581-2310461473-4245526587-1001\\$RB6QA6T\\board_exam_analysis",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "LoanLolly",
+            "cwd": "Users\\indus\\StudioProjects\\LoanLolly",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "LoanLolly (profile mode)",
+            "cwd": "Users\\indus\\StudioProjects\\LoanLolly",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "LoanLolly (release mode)",
+            "cwd": "Users\\indus\\StudioProjects\\LoanLolly",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}

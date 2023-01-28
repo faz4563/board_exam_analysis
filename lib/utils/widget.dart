@@ -6,12 +6,13 @@ import 'package:flutter/material.dart';
 
 class GradientText extends StatelessWidget {
   const GradientText(
-    this.text, {super.key, 
+    this.text, {
+    super.key,
     required this.gradient,
     this.style,
   });
 
-  final String ?text;
+  final String? text;
   final TextStyle? style;
   final Gradient? gradient;
 
@@ -82,7 +83,90 @@ class _GlowingTextState extends State<GlowingText> {
               fontFamily: monb,
               fontWeight: FontWeight.bold),
       child: Text(widget.text),
-      
+    );
+  }
+}
+
+class TextInputs extends StatelessWidget {
+  const TextInputs({
+    super.key,
+    required this.controller,
+    this.hintText,
+    this.contentPadding,
+    this.edgeRadius,
+    this.keyboardType,
+    required this.validator,
+    this.hideText,
+    this.inputTextSize,
+    this.fontWeight,
+    this.textColor,
+    this.hintStyle,
+    this.prefIcon,
+    this.sufficon,
+    this.label,
+    this.labelColor,
+    required this.Onchanged,
+    this.readOnly,
+    this.Fields_Width,
+    this.Fields_Height,
+  });
+  final controller;
+  final hintText;
+  final edgeRadius;
+  final keyboardType;
+  final hintStyle;
+  final prefIcon;
+  final sufficon;
+  final Function validator;
+  final Function Onchanged;
+  final hideText;
+  final label;
+  final inputTextSize;
+  final fontWeight;
+  final textColor;
+  final labelColor;
+  final contentPadding;
+  final readOnly;
+  final Fields_Width;
+  final Fields_Height;
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: Fields_Width,
+      height: Fields_Height,
+      child: TextFormField(
+        readOnly: readOnly,
+        controller: controller,
+        decoration: InputDecoration(
+            contentPadding: EdgeInsets.all(contentPadding),
+            enabledBorder: OutlineInputBorder(
+              borderSide: const BorderSide(color: Colors.black, width: 1.0),
+              borderRadius: BorderRadius.circular(edgeRadius),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderSide: const BorderSide(color: Colors.black, width: 1.0),
+              borderRadius: BorderRadius.circular(edgeRadius),
+            ),
+            label: label,
+            labelStyle: TextStyle(color: labelColor),
+            hintStyle: hintStyle,
+            prefixIcon: prefIcon,
+            suffixIcon: sufficon,
+            hintText: hintText,
+            prefixStyle: const TextStyle(color: Colors.grey),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(20),
+            )),
+        keyboardType: keyboardType,
+        validator: validator(),
+        onChanged: Onchanged(),
+        obscureText: hideText,
+        style: TextStyle(
+          fontSize: inputTextSize,
+          fontWeight: fontWeight,
+          color: textColor,
+        ),
+      ),
     );
   }
 }
