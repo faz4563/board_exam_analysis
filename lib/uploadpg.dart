@@ -864,17 +864,24 @@ class _UploadpgState extends State<Uploadpg> {
                                 ),
                                 ElevatedButton(
                                   style: ElevatedButton.styleFrom(
-                                      side: BorderSide(),
                                       shape: RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(15.0),
                                       ),
-                                      fixedSize: Size(80.w, 30.h),
+                                      fixedSize: Size(30.w, 30.h),
                                       backgroundColor: const Color(0xFFEC8D3C)),
                                   onPressed: () {},
                                   child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      Image.asset(impo),
+                                      Image.asset(
+                                        impo,
+                                        width: 15,
+                                        height: 15,
+                                      ),
+                                      SizedBox(
+                                        width: 10,
+                                      ),
                                       Text(
                                         'Import',
                                         style: TextStyle(
@@ -885,159 +892,206 @@ class _UploadpgState extends State<Uploadpg> {
                                 ),
                               ],
                             ),
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                    fixedSize: Size(20.w, 30.h),
+                                    backgroundColor: const Color(0xFF1D1D1D)),
+                                onPressed: () {},
+                                child: Text(
+                                  'Clear',
+                                  style: TextStyle(
+                                      fontFamily: rubm, fontSize: 14.h),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 20,
+                              ),
+                              ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                    fixedSize: Size(50.w, 30.h),
+                                    backgroundColor: const Color(0xFF1F8A70)),
+                                onPressed: () {},
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Icon(
+                                      Icons.download_sharp,
+                                      color: Colors.white,
+                                      size: 20,
+                                    ),
+                                    Text(
+                                      'Download Report',
+                                      style: TextStyle(
+                                          fontFamily: rubm, fontSize: 14.h),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
                           )
                         ],
                       ),
                     ),
                   ),
                 ]),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              GlowingText(text: 'We\'d Love To Hear From You'),
+              SizedBox(height: 5.h),
+              Text(
+                'If you would like to know more about our products and services, our team would be happy to speak to you.',
+                style: TextStyle(
+                  decoration: TextDecoration.none,
+                  fontFamily: rubm,
+                  color: const Color(0xff6A6A6A),
+                  fontStyle: FontStyle.italic,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 15.h,
+                ),
+              ),
+              SizedBox(height: 5.h),
+              RichText(
+                text: TextSpan(
+                  style: DefaultTextStyle.of(context).style,
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: 'Reach us at ',
+                      style: TextStyle(
+                        decoration: TextDecoration.none,
+                        fontFamily: rubr,
+                        color: const Color(0xff272727),
+                        fontWeight: FontWeight.w600,
+                        fontSize: 15.h,
+                      ),
+                    ),
+                    TextSpan(
+                      text: ' 8880280005',
+                      style: TextStyle(
+                        decoration: TextDecoration.none,
+                        fontFamily: rubm,
+                        color: const Color(0xff272727),
+                        fontSize: 15.h,
+                      ),
+                    ),
+                    TextSpan(
+                      text: ' or drop an email to ',
+                      style: TextStyle(
+                        decoration: TextDecoration.none,
+                        fontFamily: rubr,
+                        color: const Color(0xff272727),
+                        fontWeight: FontWeight.w600,
+                        fontSize: 15.h,
+                      ),
+                    ),
+                    TextSpan(
+                      text: ' hello@neverskip.com',
+                      style: TextStyle(
+                        decoration: TextDecoration.none,
+                        fontFamily: rubm,
+                        color: const Color(0xff272727),
+                        fontSize: 15.h,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 5.h),
+              Divider(
+                indent: 20.w,
+                endIndent: 20.w,
+                color: const Color(0xffC9C9C9),
+                thickness: 0.5,
+              ),
+              SizedBox(
+                height: 1.h,
+              ),
+              Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 10.w),
+                    child: Column(
+                      children: [
+                        Image(
+                          image: AssetImage(logo),
+                          width: 40.w,
+                          height: 40.h,
+                        ),
+                        Text(
+                          'www.neverskip.com',
+                          style: TextStyle(
+                              decoration: TextDecoration.none,
+                              fontFamily: rubr,
+                              fontWeight: FontWeight.bold,
+                              color: const Color(0xFF00425A),
+                              fontSize: 13.h),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    width: 25.w,
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Jarulss Software Solutions Pvt Ltd',
+                        style: TextStyle(
+                            decoration: TextDecoration.none,
+                            fontFamily: 'Montserrat',
+                            fontWeight: FontWeight.bold,
+                            color: const Color(0xFF333333),
+                            fontSize: 13.h),
+                      ),
+                      SizedBox(
+                        height: 5.h,
+                      ),
+                      Text(
+                        '#47, Razaak Garden Road, Arumbakkam, Chennai, Tamil Nadu 600106',
+                        style: TextStyle(
+                            decoration: TextDecoration.none,
+                            fontFamily: rubr,
+                            fontWeight: FontWeight.w400,
+                            color: const Color(0xFF636363),
+                            fontSize: 13.h),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    width: 100.w,
+                  ),
+                  const Icon(
+                    Icons.copyright_rounded,
+                    color: Color(0xff00425A),
+                    size: 23,
+                  ),
+                  SizedBox(
+                    width: 1.w,
+                  ),
+                  Expanded(
+                    child: Text(
+                      '2023 Neverskip. All Rights Reserved',
+                      style: TextStyle(
+                          decoration: TextDecoration.none,
+                          fontFamily: rubr,
+                          fontWeight: FontWeight.w400,
+                          color: const Color(0xff00425A),
+                          fontSize: 13.h),
+                    ),
+                  ),
+                ],
               )
-              // GlowingText(text: 'We\'d Love To Hear From You'),
-              // SizedBox(height: 5.h),
-              // Text(
-              //   'If you would like to know more about our products and services, our team would be happy to speak to you.',
-              //   style: TextStyle(
-              //     decoration: TextDecoration.none,
-              //     fontFamily: rubm,
-              //     color: const Color(0xff6A6A6A),
-              //     fontStyle: FontStyle.italic,
-              //     fontWeight: FontWeight.w400,
-              //     fontSize: 15.h,
-              //   ),
-              // ),
-              // SizedBox(height: 5.h),
-              // RichText(
-              //   text: TextSpan(
-              //     style: DefaultTextStyle.of(context).style,
-              //     children: <TextSpan>[
-              //       TextSpan(
-              //         text: 'Reach us at ',
-              //         style: TextStyle(
-              //           decoration: TextDecoration.none,
-              //           fontFamily: rubr,
-              //           color: const Color(0xff272727),
-              //           fontWeight: FontWeight.w600,
-              //           fontSize: 15.h,
-              //         ),
-              //       ),
-              //       TextSpan(
-              //         text: ' 8880280005',
-              //         style: TextStyle(
-              //           decoration: TextDecoration.none,
-              //           fontFamily: rubm,
-              //           color: const Color(0xff272727),
-              //           fontSize: 15.h,
-              //         ),
-              //       ),
-              //       TextSpan(
-              //         text: ' or drop an email to ',
-              //         style: TextStyle(
-              //           decoration: TextDecoration.none,
-              //           fontFamily: rubr,
-              //           color: const Color(0xff272727),
-              //           fontWeight: FontWeight.w600,
-              //           fontSize: 15.h,
-              //         ),
-              //       ),
-              //       TextSpan(
-              //         text: ' hello@neverskip.com',
-              //         style: TextStyle(
-              //           decoration: TextDecoration.none,
-              //           fontFamily: rubm,
-              //           color: const Color(0xff272727),
-              //           fontSize: 15.h,
-              //         ),
-              //       ),
-              //     ],
-              //   ),
-              // ),
-              // SizedBox(height: 5.h),
-              // Divider(
-              //   indent: 20.w,
-              //   endIndent: 20.w,
-              //   color: const Color(0xffC9C9C9),
-              //   thickness: 0.5,
-              // ),
-              // SizedBox(
-              //   height: 1.h,
-              // ),
-              // Row(
-              //   children: [
-              //     Padding(
-              //       padding: EdgeInsets.only(left: 10.w),
-              //       child: Column(
-              //         children: [
-              //           Image(
-              //             image: AssetImage(logo),
-              //             width: 40.w,
-              //             height: 40.h,
-              //           ),
-              //           Text(
-              //             'www.neverskip.com',
-              //             style: TextStyle(
-              //                 decoration: TextDecoration.none,
-              //                 fontFamily: rubr,
-              //                 fontWeight: FontWeight.bold,
-              //                 color: const Color(0xFF00425A),
-              //                 fontSize: 13.h),
-              //           ),
-              //         ],
-              //       ),
-              //     ),
-              //     SizedBox(
-              //       width: 25.w,
-              //     ),
-              //     Column(
-              //       mainAxisAlignment: MainAxisAlignment.start,
-              //       crossAxisAlignment: CrossAxisAlignment.start,
-              //       children: [
-              //         Text(
-              //           'Jarulss Software Solutions Pvt Ltd',
-              //           style: TextStyle(
-              //               decoration: TextDecoration.none,
-              //               fontFamily: 'Montserrat',
-              //               fontWeight: FontWeight.bold,
-              //               color: const Color(0xFF333333),
-              //               fontSize: 13.h),
-              //         ),
-              //         SizedBox(
-              //           height: 5.h,
-              //         ),
-              //         Text(
-              //           '#47, Razaak Garden Road, Arumbakkam, Chennai, Tamil Nadu 600106',
-              //           style: TextStyle(
-              //               decoration: TextDecoration.none,
-              //               fontFamily: rubr,
-              //               fontWeight: FontWeight.w400,
-              //               color: const Color(0xFF636363),
-              //               fontSize: 13.h),
-              //         ),
-              //       ],
-              //     ),
-              //     SizedBox(
-              //       width: 100.w,
-              //     ),
-              //     const Icon(
-              //       Icons.copyright_rounded,
-              //       color: Color(0xff00425A),
-              //       size: 23,
-              //     ),
-              //     SizedBox(
-              //       width: 1.w,
-              //     ),
-              //     Expanded(
-              //       child: Text(
-              //         '2023 Neverskip. All Rights Reserved',
-              //         style: TextStyle(
-              //             decoration: TextDecoration.none,
-              //             fontFamily: rubr,
-              //             fontWeight: FontWeight.w400,
-              //             color: const Color(0xff00425A),
-              //             fontSize: 13.h),
-              //       ),
-              //     ),
-              //   ],
-              // )
             ]),
           ),
         ],
