@@ -109,6 +109,8 @@ class TextInputs extends StatelessWidget {
     this.readOnly,
     this.Fields_Width,
     this.Fields_Height,
+    this.BorderColor,
+    this.BgColor,
   });
   final controller;
   final hintText;
@@ -127,6 +129,8 @@ class TextInputs extends StatelessWidget {
   final labelColor;
   final contentPadding;
   final readOnly;
+  final BorderColor;
+  final BgColor;
   final Fields_Width;
   final Fields_Height;
   @override
@@ -138,13 +142,14 @@ class TextInputs extends StatelessWidget {
         readOnly: readOnly,
         controller: controller,
         decoration: InputDecoration(
+            fillColor: BgColor,
             contentPadding: EdgeInsets.all(contentPadding),
             enabledBorder: OutlineInputBorder(
-              borderSide: const BorderSide(color: Colors.black, width: 1.0),
+              borderSide: BorderSide(color: BorderColor, width: 1.0),
               borderRadius: BorderRadius.circular(edgeRadius),
             ),
             focusedBorder: OutlineInputBorder(
-              borderSide: const BorderSide(color: Colors.black, width: 1.0),
+              borderSide: BorderSide(color: BorderColor, width: 1.0),
               borderRadius: BorderRadius.circular(edgeRadius),
             ),
             label: label,

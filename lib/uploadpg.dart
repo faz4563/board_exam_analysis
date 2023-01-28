@@ -116,46 +116,58 @@ class _UploadpgState extends State<Uploadpg> {
             height: MediaQuery.of(context).size.height / 2,
             child: ListView(
               children: [
-                const Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Text("School Info"),
-                ),
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Padding(
                     padding:
                         EdgeInsets.symmetric(horizontal: 10.w, vertical: 20.h),
-                    child: Container(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text("School Name"),
-                          SizedBox(
-                            height: 5.h,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 0.h, vertical: 0.h),
+                          child: const Text("School Info"),
+                        ),
+                        SizedBox(
+                          height: 5.h,
+                        ),
+                        SizedBox(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text("School Name"),
+                              SizedBox(
+                                height: 5.h,
+                              ),
+                              TextInputs(
+                                  // Fields_Height: 30.h,
+                                  // Fields_Width: 80.w,
+                                  controller: schoolNameController,
+                                  validator: () {},
+                                  BgColor: Colors.white,
+                                  edgeRadius: 5.0,
+                                  keyboardType: TextInputType.name,
+                                  hideText: false,
+                                  fontWeight: FontWeight.w200,
+                                  BorderColor: Color(0xffE8E8E8),
+                                  hintText: "Your School Name",
+                                  inputTextSize: 12.0,
+                                  label: null,
+                                  sufficon: null,
+                                  prefIcon: null,
+                                  contentPadding: 5.0,
+                                  labelColor: null,
+                                  hintStyle: null,
+                                  textColor: null,
+                                  readOnly: false,
+                                  Onchanged: () {}),
+                            ],
                           ),
-                          TextInputs(
-                              // Fields_Height: 30.h,
-                              // Fields_Width: 80.w,
-                              controller: schoolNameController,
-                              validator: () {},
-                              edgeRadius: 5.0,
-                              keyboardType: TextInputType.name,
-                              hideText: false,
-                              fontWeight: FontWeight.w200,
-                              hintText: "Your School Name",
-                              inputTextSize: 12.0,
-                              label: null,
-                              sufficon: null,
-                              prefIcon: null,
-                              contentPadding: 5.0,
-                              labelColor: null,
-                              hintStyle: null,
-                              textColor: null,
-                              readOnly: false,
-                              Onchanged: () {}),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
                 ),

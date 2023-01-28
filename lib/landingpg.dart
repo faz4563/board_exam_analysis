@@ -117,8 +117,8 @@ class _landingpgState extends State<landingpg> {
               ),
               SizedBox(height: 20.h),
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.5,
-                width: MediaQuery.of(context).size.width * 0.4,
+                height: 350.h,
+                width: 140.w,
                 child: Card(
                   elevation: 5,
                   color: const Color(0xFFFBFBFB),
@@ -128,7 +128,7 @@ class _landingpgState extends State<landingpg> {
                           const BorderSide(color: Color(0xFFE8E8E8), width: 2)),
                   child: Column(children: [
                     Padding(
-                      padding: const EdgeInsets.only(top: 30),
+                      padding: EdgeInsets.only(top: 30.h),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -140,54 +140,56 @@ class _landingpgState extends State<landingpg> {
                           SizedBox(
                             width: 3.w,
                           ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Features :',
-                                style: TextStyle(
-                                  decoration: TextDecoration.none,
-                                  color: const Color(0xFF303030),
-                                  fontFamily: monb,
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 16.0.h,
+                          Expanded(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Features :',
+                                  style: TextStyle(
+                                    decoration: TextDecoration.none,
+                                    color: const Color(0xFF303030),
+                                    fontFamily: monb,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 16.0.h,
 
-                                  // fontStyle: FontStyle.italic,
+                                    // fontStyle: FontStyle.italic,
+                                  ),
                                 ),
-                              ),
-                              SizedBox(
-                                height: 10.h,
-                              ),
-                              SizedBox(
-                                height: 200.h,
-                                width: 80.w,
-                                child: ListView.builder(
-                                    itemCount: FeaturesList.length,
-                                    itemExtent: 30,
-                                    itemBuilder: (context, index) => Row(
-                                          children: [
-                                            Icon(
-                                              Icons.brightness_1_rounded,
-                                              color: const Color(0xFFBFDB38),
-                                              size: 10.h,
-                                            ),
-                                            SizedBox(
-                                              width: 5.w,
-                                            ),
-                                            Expanded(
-                                              child: Text(
-                                                FeaturesList[index],
-                                                style: TextStyle(
-                                                    fontSize: 14.h,
-                                                    fontWeight:
-                                                        FontWeight.w700),
+                                SizedBox(
+                                  height: 10.h,
+                                ),
+                                SizedBox(
+                                  height: 200.h,
+                                  width: 80.w,
+                                  child: ListView.builder(
+                                      itemCount: FeaturesList.length,
+                                      itemExtent: 30,
+                                      itemBuilder: (context, index) => Row(
+                                            children: [
+                                              Icon(
+                                                Icons.brightness_1_rounded,
+                                                color: const Color(0xFFBFDB38),
+                                                size: 10.h,
                                               ),
-                                            )
-                                          ],
-                                        )),
-                              ),
-                            ],
+                                              SizedBox(
+                                                width: 5.w,
+                                              ),
+                                              Expanded(
+                                                child: Text(
+                                                  FeaturesList[index],
+                                                  style: TextStyle(
+                                                      fontSize: 11.h,
+                                                      fontWeight:
+                                                          FontWeight.w700),
+                                                ),
+                                              )
+                                            ],
+                                          )),
+                                ),
+                              ],
+                            ),
                           )
                         ],
                       ),
