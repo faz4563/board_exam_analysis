@@ -96,6 +96,12 @@ flutter:
         - asset: assets/fonts/Rubik-SemiBold.ttf
         - asset: assets/fonts/Rubik-Medium.ttf
 
+    - family: Muli
+      fonts:
+        - asset: assets/fonts/Mulish-Regular.ttf
+        - asset: assets/fonts/Mulish-SemiBold.ttf
+        - asset: assets/fonts/Mulish-Medium.ttf
+
  
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
