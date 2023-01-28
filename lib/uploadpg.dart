@@ -115,8 +115,8 @@ class _UploadpgState extends State<Uploadpg> {
               Container(
                 width: MediaQuery.of(context).size.width / 2,
                 decoration: BoxDecoration(
-                    color: Color(0xffFBFBFB),
-                    border: Border.all(color: Color(0xffE8E8E8)),
+                    color: const Color(0xffFBFBFB),
+                    border: Border.all(color: const Color(0xffE8E8E8)),
                     // color: Colors.red,
                     borderRadius: BorderRadius.circular(15)),
                 // height: MediaQuery.of(context).size.height / 2,
@@ -124,15 +124,14 @@ class _UploadpgState extends State<Uploadpg> {
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: 10.w, vertical: 20.h),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 0.h, vertical: 0.h),
+                            padding: EdgeInsets.symmetric(vertical: 5.h),
                             child: Text(
                               "School Info",
                               style: TextStyle(
@@ -144,7 +143,7 @@ class _UploadpgState extends State<Uploadpg> {
                             ),
                           ),
                           SizedBox(
-                            height: 25.h,
+                            height: 15.h,
                           ),
                           SizedBox(
                             child: Column(
@@ -170,8 +169,8 @@ class _UploadpgState extends State<Uploadpg> {
                                         style: TextStyle(
                                           decoration: TextDecoration.none,
                                           fontFamily: rubm,
-                                          color:
-                                              Color.fromARGB(255, 231, 27, 27),
+                                          color: const Color.fromARGB(
+                                              255, 231, 27, 27),
                                           fontSize: 15.h,
                                         ),
                                       ),
@@ -182,16 +181,16 @@ class _UploadpgState extends State<Uploadpg> {
                                   height: 5.h,
                                 ),
                                 TextInputs(
-                                    // Fields_Height: 30.h,
+                                    Fields_Height: 40.h,
                                     // Fields_Width: 80.w,
                                     controller: schoolNameController,
                                     validator: () {},
-                                    BgColor: Color(0xffffffff),
+                                    BgColor: const Color(0xffffffff),
                                     edgeRadius: 5.0,
                                     keyboardType: TextInputType.name,
                                     hideText: false,
                                     fontWeight: FontWeight.w200,
-                                    BorderColor: Color(0xffE8E8E8),
+                                    BorderColor: const Color(0xffE8E8E8),
                                     hintText: "Your School Name",
                                     inputTextSize: 12.0,
                                     label: null,
@@ -199,7 +198,9 @@ class _UploadpgState extends State<Uploadpg> {
                                     prefIcon: null,
                                     contentPadding: 5.0,
                                     labelColor: null,
-                                    hintStyle: null,
+                                    hintStyle: TextStyle(
+                                        fontSize: 10.h,
+                                        color: Color(0xffA8A8A8)),
                                     textColor: null,
                                     readOnly: false,
                                     Onchanged: () {}),
@@ -216,7 +217,7 @@ class _UploadpgState extends State<Uploadpg> {
                         alignment: Alignment.centerLeft,
                         child: Padding(
                           padding: EdgeInsets.symmetric(
-                              horizontal: 10.w, vertical: 20.h),
+                              horizontal: 10.w, vertical: 10.h),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -246,7 +247,7 @@ class _UploadpgState extends State<Uploadpg> {
                                             style: TextStyle(
                                               decoration: TextDecoration.none,
                                               fontFamily: rubm,
-                                              color: Color.fromARGB(
+                                              color: const Color.fromARGB(
                                                   255, 231, 27, 27),
                                               fontSize: 15.h,
                                             ),
@@ -262,12 +263,12 @@ class _UploadpgState extends State<Uploadpg> {
                                         Fields_Width: 60.w,
                                         controller: flatNoAndStreetName,
                                         validator: () {},
-                                        BgColor: Color(0xffffffff),
+                                        BgColor: const Color(0xffffffff),
                                         edgeRadius: 5.0,
                                         keyboardType: TextInputType.name,
                                         hideText: false,
                                         fontWeight: FontWeight.w200,
-                                        BorderColor: Color(0xffE8E8E8),
+                                        BorderColor: const Color(0xffE8E8E8),
                                         hintText: "Type Flat No & Street",
                                         inputTextSize: 12.0,
                                         label: null,
@@ -275,7 +276,9 @@ class _UploadpgState extends State<Uploadpg> {
                                         prefIcon: null,
                                         contentPadding: 5.0,
                                         labelColor: null,
-                                        hintStyle: null,
+                                        hintStyle: TextStyle(
+                                            fontSize: 10.h,
+                                            color: Color(0xffA8A8A8)),
                                         textColor: null,
                                         readOnly: false,
                                         Onchanged: () {}),
@@ -290,7 +293,7 @@ class _UploadpgState extends State<Uploadpg> {
                         alignment: Alignment.centerLeft,
                         child: Padding(
                           padding: EdgeInsets.symmetric(
-                              horizontal: 10.w, vertical: 20.h),
+                              horizontal: 10.w, vertical: 10.h),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -320,7 +323,7 @@ class _UploadpgState extends State<Uploadpg> {
                                             style: TextStyle(
                                               decoration: TextDecoration.none,
                                               fontFamily: rubm,
-                                              color: Color.fromARGB(
+                                              color: const Color.fromARGB(
                                                   255, 231, 27, 27),
                                               fontSize: 15.h,
                                             ),
@@ -336,12 +339,12 @@ class _UploadpgState extends State<Uploadpg> {
                                         Fields_Width: 60.w,
                                         controller: city,
                                         validator: () {},
-                                        BgColor: Color(0xffffffff),
+                                        BgColor: const Color(0xffffffff),
                                         edgeRadius: 5.0,
                                         keyboardType: TextInputType.name,
                                         hideText: false,
                                         fontWeight: FontWeight.w200,
-                                        BorderColor: Color(0xffE8E8E8),
+                                        BorderColor: const Color(0xffE8E8E8),
                                         hintText: "City",
                                         inputTextSize: 12.0,
                                         label: null,
@@ -349,7 +352,9 @@ class _UploadpgState extends State<Uploadpg> {
                                         prefIcon: null,
                                         contentPadding: 5.0,
                                         labelColor: null,
-                                        hintStyle: null,
+                                        hintStyle: TextStyle(
+                                            fontSize: 10.h,
+                                            color: Color(0xffA8A8A8)),
                                         textColor: null,
                                         readOnly: false,
                                         Onchanged: () {}),
@@ -368,7 +373,7 @@ class _UploadpgState extends State<Uploadpg> {
                         alignment: Alignment.centerLeft,
                         child: Padding(
                           padding: EdgeInsets.symmetric(
-                              horizontal: 10.w, vertical: 20.h),
+                              horizontal: 10.w, vertical: 10.h),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -398,7 +403,7 @@ class _UploadpgState extends State<Uploadpg> {
                                             style: TextStyle(
                                               decoration: TextDecoration.none,
                                               fontFamily: rubm,
-                                              color: Color.fromARGB(
+                                              color: const Color.fromARGB(
                                                   255, 231, 27, 27),
                                               fontSize: 15.h,
                                             ),
@@ -414,12 +419,12 @@ class _UploadpgState extends State<Uploadpg> {
                                         Fields_Width: 60.w,
                                         controller: state,
                                         validator: () {},
-                                        BgColor: Color(0xffffffff),
+                                        BgColor: const Color(0xffffffff),
                                         edgeRadius: 5.0,
                                         keyboardType: TextInputType.name,
                                         hideText: false,
                                         fontWeight: FontWeight.w200,
-                                        BorderColor: Color(0xffE8E8E8),
+                                        BorderColor: const Color(0xffE8E8E8),
                                         hintText: "State",
                                         inputTextSize: 12.0,
                                         label: null,
@@ -427,7 +432,9 @@ class _UploadpgState extends State<Uploadpg> {
                                         prefIcon: null,
                                         contentPadding: 5.0,
                                         labelColor: null,
-                                        hintStyle: null,
+                                        hintStyle: TextStyle(
+                                            fontSize: 10.h,
+                                            color: Color(0xffA8A8A8)),
                                         textColor: null,
                                         readOnly: false,
                                         Onchanged: () {}),
@@ -442,7 +449,7 @@ class _UploadpgState extends State<Uploadpg> {
                         alignment: Alignment.centerLeft,
                         child: Padding(
                           padding: EdgeInsets.symmetric(
-                              horizontal: 10.w, vertical: 20.h),
+                              horizontal: 10.w, vertical: 10.h),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -472,7 +479,7 @@ class _UploadpgState extends State<Uploadpg> {
                                             style: TextStyle(
                                               decoration: TextDecoration.none,
                                               fontFamily: rubm,
-                                              color: Color.fromARGB(
+                                              color: const Color.fromARGB(
                                                   255, 231, 27, 27),
                                               fontSize: 15.h,
                                             ),
@@ -488,12 +495,12 @@ class _UploadpgState extends State<Uploadpg> {
                                         Fields_Width: 60.w,
                                         controller: pincode,
                                         validator: () {},
-                                        BgColor: Color(0xffffffff),
+                                        BgColor: const Color(0xffffffff),
                                         edgeRadius: 5.0,
                                         keyboardType: TextInputType.name,
                                         hideText: false,
                                         fontWeight: FontWeight.w200,
-                                        BorderColor: Color(0xffE8E8E8),
+                                        BorderColor: const Color(0xffE8E8E8),
                                         hintText: "Pincode",
                                         inputTextSize: 12.0,
                                         label: null,
@@ -501,7 +508,9 @@ class _UploadpgState extends State<Uploadpg> {
                                         prefIcon: null,
                                         contentPadding: 5.0,
                                         labelColor: null,
-                                        hintStyle: null,
+                                        hintStyle: TextStyle(
+                                            fontSize: 10.h,
+                                            color: Color(0xffA8A8A8)),
                                         textColor: null,
                                         readOnly: false,
                                         Onchanged: () {}),
@@ -517,104 +526,15 @@ class _UploadpgState extends State<Uploadpg> {
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: 10.w, vertical: 20.h),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 0.h, vertical: 0.h),
-                            child: Text(
-                              "Location",
-                              style: TextStyle(
-                                  decoration: TextDecoration.none,
-                                  fontFamily: 'Montserrat',
-                                  fontWeight: FontWeight.bold,
-                                  color: const Color(0xFF448CF3),
-                                  fontSize: 16.h),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 25.h,
-                          ),
-                          SizedBox(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                RichText(
-                                  text: TextSpan(
-                                    style: DefaultTextStyle.of(context).style,
-                                    children: <TextSpan>[
-                                      TextSpan(
-                                        text: 'Google Map Link',
-                                        style: TextStyle(
-                                          decoration: TextDecoration.none,
-                                          fontFamily: 'Muli',
-                                          color: const Color(0xff828282),
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 13.h,
-                                        ),
-                                      ),
-                                      TextSpan(
-                                        text: '*',
-                                        style: TextStyle(
-                                          decoration: TextDecoration.none,
-                                          fontFamily: rubm,
-                                          color:
-                                              Color.fromARGB(255, 231, 27, 27),
-                                          fontSize: 15.h,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 5.h,
-                                ),
-                                TextInputs(
-                                    // Fields_Height: 30.h,
-                                    // Fields_Width: 80.w,
-                                    controller: googleMapLink,
-                                    validator: () {},
-                                    BgColor: Color(0xffffffff),
-                                    edgeRadius: 5.0,
-                                    keyboardType: TextInputType.name,
-                                    hideText: false,
-                                    fontWeight: FontWeight.w200,
-                                    BorderColor: Color(0xffE8E8E8),
-                                    hintText: "Paste Link",
-                                    inputTextSize: 12.0,
-                                    label: null,
-                                    sufficon: null,
-                                    prefIcon: null,
-                                    contentPadding: 5.0,
-                                    labelColor: null,
-                                    hintStyle: null,
-                                    textColor: null,
-                                    readOnly: false,
-                                    Onchanged: () {}),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Padding(
                       padding:
-                          EdgeInsets.symmetric(horizontal: 10.w, vertical: 0.h),
+                          EdgeInsets.symmetric(horizontal: 10.w, vertical: 2.h),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
                             padding: EdgeInsets.symmetric(
-                                horizontal: 0.h, vertical: 0.h),
+                                horizontal: 0.h, vertical: 5.h),
                             child: Text(
                               "Contact Details",
                               style: TextStyle(
@@ -625,9 +545,9 @@ class _UploadpgState extends State<Uploadpg> {
                                   fontSize: 16.h),
                             ),
                           ),
-                          SizedBox(
-                            height: 5.h,
-                          ),
+                          // SizedBox(
+                          //   height: 5.h,
+                          // ),
                           SizedBox(
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.start,
@@ -639,7 +559,7 @@ class _UploadpgState extends State<Uploadpg> {
                                       alignment: Alignment.centerLeft,
                                       child: Padding(
                                         padding: EdgeInsets.symmetric(
-                                            horizontal: 0.w, vertical: 20.h),
+                                            horizontal: 0.w, vertical: 10.h),
                                         child: Column(
                                           mainAxisAlignment:
                                               MainAxisAlignment.start,
@@ -681,12 +601,12 @@ class _UploadpgState extends State<Uploadpg> {
                                                                 TextDecoration
                                                                     .none,
                                                             fontFamily: rubm,
-                                                            color:
-                                                                Color.fromARGB(
-                                                                    255,
-                                                                    231,
-                                                                    27,
-                                                                    27),
+                                                            color: const Color
+                                                                    .fromARGB(
+                                                                255,
+                                                                231,
+                                                                27,
+                                                                27),
                                                             fontSize: 15.h,
                                                           ),
                                                         ),
@@ -694,23 +614,23 @@ class _UploadpgState extends State<Uploadpg> {
                                                     ),
                                                   ),
                                                   SizedBox(
-                                                    height: 5.h,
+                                                    height: 10.h,
                                                   ),
                                                   TextInputs(
                                                       Fields_Height: 30.h,
                                                       Fields_Width: 60.w,
                                                       controller: name,
                                                       validator: () {},
-                                                      BgColor:
-                                                          Color(0xffffffff),
+                                                      BgColor: const Color(
+                                                          0xffffffff),
                                                       edgeRadius: 5.0,
                                                       keyboardType:
                                                           TextInputType.name,
                                                       hideText: false,
                                                       fontWeight:
                                                           FontWeight.w200,
-                                                      BorderColor:
-                                                          Color(0xffE8E8E8),
+                                                      BorderColor: const Color(
+                                                          0xffE8E8E8),
                                                       hintText: "Type Name",
                                                       inputTextSize: 12.0,
                                                       label: null,
@@ -718,7 +638,10 @@ class _UploadpgState extends State<Uploadpg> {
                                                       prefIcon: null,
                                                       contentPadding: 5.0,
                                                       labelColor: null,
-                                                      hintStyle: null,
+                                                      hintStyle: TextStyle(
+                                                          fontSize: 10.h,
+                                                          color: Color(
+                                                              0xffA8A8A8)),
                                                       textColor: null,
                                                       readOnly: false,
                                                       Onchanged: () {}),
@@ -736,7 +659,7 @@ class _UploadpgState extends State<Uploadpg> {
                                       alignment: Alignment.centerLeft,
                                       child: Padding(
                                         padding: EdgeInsets.symmetric(
-                                            horizontal: 0.w, vertical: 0.h),
+                                            horizontal: 0.w, vertical: 10.h),
                                         child: Column(
                                           mainAxisAlignment:
                                               MainAxisAlignment.start,
@@ -778,12 +701,12 @@ class _UploadpgState extends State<Uploadpg> {
                                                                 TextDecoration
                                                                     .none,
                                                             fontFamily: rubm,
-                                                            color:
-                                                                Color.fromARGB(
-                                                                    255,
-                                                                    231,
-                                                                    27,
-                                                                    27),
+                                                            color: const Color
+                                                                    .fromARGB(
+                                                                255,
+                                                                231,
+                                                                27,
+                                                                27),
                                                             fontSize: 15.h,
                                                           ),
                                                         ),
@@ -798,16 +721,16 @@ class _UploadpgState extends State<Uploadpg> {
                                                       Fields_Width: 60.w,
                                                       controller: phoneno,
                                                       validator: () {},
-                                                      BgColor:
-                                                          Color(0xffffffff),
+                                                      BgColor: const Color(
+                                                          0xffffffff),
                                                       edgeRadius: 5.0,
                                                       keyboardType:
                                                           TextInputType.name,
                                                       hideText: false,
                                                       fontWeight:
                                                           FontWeight.w200,
-                                                      BorderColor:
-                                                          Color(0xffE8E8E8),
+                                                      BorderColor: const Color(
+                                                          0xffE8E8E8),
                                                       hintText:
                                                           "Type Phone Number",
                                                       inputTextSize: 12.0,
@@ -816,7 +739,10 @@ class _UploadpgState extends State<Uploadpg> {
                                                       prefIcon: null,
                                                       contentPadding: 5.0,
                                                       labelColor: null,
-                                                      hintStyle: null,
+                                                      hintStyle: TextStyle(
+                                                          fontSize: 10.h,
+                                                          color: Color(
+                                                              0xffA8A8A8)),
                                                       textColor: null,
                                                       readOnly: false,
                                                       Onchanged: () {}),
@@ -848,8 +774,8 @@ class _UploadpgState extends State<Uploadpg> {
                                         style: TextStyle(
                                           decoration: TextDecoration.none,
                                           fontFamily: rubm,
-                                          color:
-                                              Color.fromARGB(255, 231, 27, 27),
+                                          color: const Color.fromARGB(
+                                              255, 231, 27, 27),
                                           fontSize: 15.h,
                                         ),
                                       ),
@@ -860,16 +786,16 @@ class _UploadpgState extends State<Uploadpg> {
                                   height: 5.h,
                                 ),
                                 TextInputs(
-                                    // Fields_Height: 30.h,
+                                    Fields_Height: 40.h,
                                     // Fields_Width: 80.w,
                                     controller: email,
                                     validator: () {},
-                                    BgColor: Color(0xffffffff),
+                                    BgColor: const Color(0xffffffff),
                                     edgeRadius: 5.0,
                                     keyboardType: TextInputType.name,
                                     hideText: false,
                                     fontWeight: FontWeight.w200,
-                                    BorderColor: Color(0xffE8E8E8),
+                                    BorderColor: const Color(0xffE8E8E8),
                                     hintText: "Type Email ID",
                                     inputTextSize: 12.0,
                                     label: null,
@@ -877,7 +803,9 @@ class _UploadpgState extends State<Uploadpg> {
                                     prefIcon: null,
                                     contentPadding: 5.0,
                                     labelColor: null,
-                                    hintStyle: null,
+                                    hintStyle: TextStyle(
+                                        fontSize: 10.h,
+                                        color: Color(0xffA8A8A8)),
                                     textColor: null,
                                     readOnly: false,
                                     Onchanged: () {}),
@@ -891,8 +819,8 @@ class _UploadpgState extends State<Uploadpg> {
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: 10.w, vertical: 20.h),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -911,7 +839,7 @@ class _UploadpgState extends State<Uploadpg> {
                             ),
                           ),
                           SizedBox(
-                            height: 25.h,
+                            height: 15.h,
                           ),
                           Container(
                             width: 200.w,
