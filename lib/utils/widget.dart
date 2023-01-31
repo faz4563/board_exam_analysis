@@ -3,6 +3,7 @@ import 'dart:async';
 
 import 'package:board_exam_analysis/utils/fonts.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class GradientText extends StatelessWidget {
   const GradientText(
@@ -56,12 +57,14 @@ class _GlowingTextState extends State<GlowingText> {
 
   timer() {
     return Future.delayed(
-      Duration(seconds: 2),
+      const Duration(seconds: 2),
       () {
-        Timer.periodic(Duration(seconds: 1), (timer) {
-          setState(() {
-            _isGlowing = !_isGlowing;
-          });
+        Timer.periodic(const Duration(seconds: 1), (timer) {
+          if (mounted) {
+            setState(() {
+              _isGlowing = !_isGlowing;
+            });
+          }
         });
       },
     );
@@ -111,6 +114,8 @@ class TextInputs extends StatelessWidget {
     this.Fields_Height,
     this.BorderColor,
     this.BgColor,
+    this.errorText,
+    this.errorTextStyle,
   });
   final controller;
   final hintText;
@@ -131,23 +136,33 @@ class TextInputs extends StatelessWidget {
   final readOnly;
   final BorderColor;
   final BgColor;
+  final errorText;
+  final errorTextStyle;
   final Fields_Width;
   final Fields_Height;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      // color: Colors.red,
       width: Fields_Width,
       height: Fields_Height,
       child: TextFormField(
         readOnly: readOnly,
         controller: controller,
         decoration: InputDecoration(
+            helperText: '',
+            helperStyle: TextStyle(fontSize: 1, height: 0),
+            errorStyle: TextStyle(fontSize: 12.h, height: 0),
             fillColor: BgColor,
             contentPadding: EdgeInsets.all(contentPadding),
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(color: BorderColor, width: 1.0),
               borderRadius: BorderRadius.circular(edgeRadius),
             ),
+            // errorBorder: OutlineInputBorder(
+            //   borderSide: BorderSide(color: BorderColor, width: 1.0),
+            //   borderRadius: BorderRadius.circular(edgeRadius),
+            // ),
             focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(color: BorderColor, width: 1.0),
               borderRadius: BorderRadius.circular(edgeRadius),
@@ -163,7 +178,12 @@ class TextInputs extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
             )),
         keyboardType: keyboardType,
-        validator: validator(),
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return 'Please enter some text';
+          }
+          return null;
+        },
         onChanged: Onchanged(),
         obscureText: hideText,
         style: TextStyle(

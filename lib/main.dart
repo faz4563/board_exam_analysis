@@ -1,7 +1,7 @@
-import 'package:board_exam_analysis/landingpg.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'Screens/landingpg.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,9 +19,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:   ScreenUtilInit(
-        designSize: ScreenUtil.defaultSize,
-        builder: (context, child) =>  const landingpg()),
+      home: ScreenUtilInit(
+          designSize: ScreenUtil.defaultSize,
+          builder: (context, child) => const Landingpg()),
     );
   }
 }
