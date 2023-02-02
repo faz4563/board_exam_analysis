@@ -148,6 +148,7 @@ class TextInputs extends StatelessWidget {
       height: Fields_Height,
       child: TextFormField(
         readOnly: readOnly,
+        autovalidateMode: AutovalidateMode.onUserInteraction,
         controller: controller,
         decoration: InputDecoration(
             helperText: '',
@@ -179,10 +180,11 @@ class TextInputs extends StatelessWidget {
             )),
         keyboardType: keyboardType,
         validator: (value) {
-          if (value == null || value.isEmpty) {
-            return 'Please enter some text';
+          if (value!.isEmpty) {
+            return " Field Cannot be Empty";
+          } else if (value.contains(RegExp(r'[#?!@$%^&*-]'))) {
+            return "Please Enter a Valid Phone Number";
           }
-          return null;
         },
         onChanged: Onchanged(),
         obscureText: hideText,

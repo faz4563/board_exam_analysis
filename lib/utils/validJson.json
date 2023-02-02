@@ -1,13 +1,7 @@
 {
-    "rand_key": "uUdefNwQ",
-    "sch_name": "test1",
-    "street": "test1",
-    "city": "test1",
-    "state": "test1",
-    "pincode": "test1",
-    "location": "test1",
-    "name": "test1",
-    "mobile_no": "test1",
-    "email": "test1",
-    "image": "test1"
+    "S": true,
+    "D": {
+        "data": "https:\/\/s3.amazonaws.com\/neverskip\/data\/2\/s_img\/220230130143653.pdf"
+    },
+    "F": "S"
 }
