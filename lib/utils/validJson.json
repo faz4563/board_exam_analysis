@@ -1,7 +1,8 @@
 {
     "S": true,
     "D": {
-        "data": "https:\/\/s3.amazonaws.com\/neverskip\/data\/2\/s_img\/220230130143653.pdf"
+        "Rurl": "BANALYSIS_sample_20230203101040.txt",
+        "fullurl": "https:\/\/d1hfw03022jglv.cloudfront.net\/0\/banalysis\/BANALYSIS_sample_20230203101040.txt"
     },
     "F": "S"
 }

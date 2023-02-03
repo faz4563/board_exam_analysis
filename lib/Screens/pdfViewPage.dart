@@ -11,6 +11,8 @@ class Iframe extends StatelessWidget {
     // ignore: undefined_prefixed_name
     ui.platformViewRegistry.registerViewFactory('iframe', (int viewId) {
       var iframe = html.IFrameElement();
+      iframe.height = '200';
+      iframe.width = '200';
       iframe.src = pdfLink;
       // iframe.src =
       //     "https://s3.amazonaws.com/neverskip/data/2/s_img/220230130143653.pdf";

@@ -4,6 +4,7 @@ import 'dart:convert';
 
 import 'package:board_exam_analysis/Screens/pdfViewPage.dart';
 import 'package:board_exam_analysis/controllers/ApiController.dart';
+import 'package:board_exam_analysis/model/FileUploadModel.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:board_exam_analysis/utils/images.dart';
@@ -56,6 +57,7 @@ class _UploadpgState extends State<Uploadpg> {
   int uploadPressed = 1;
   bool PdfPreview = false;
   PdfModel PdfData = PdfModel();
+  FileUploadModel FileUploads = FileUploadModel();
 
   void uploadFile() async {
     var result = await FilePicker.platform.pickFiles(
@@ -85,6 +87,9 @@ class _UploadpgState extends State<Uploadpg> {
     var resp = await request.send();
     String result = await resp.stream.bytesToString();
     print(result);
+    if (result != null) {
+      FileUploads = fileUploadModelFromJson(result);
+    }
     setState(() {
       uploadPressed = 2;
     });
@@ -92,6 +97,7 @@ class _UploadpgState extends State<Uploadpg> {
     finished(result);
     print(fileName);
     print(uploadPressed);
+    print(FileUploads.d!.rurl);
   }
 
   finished(result) {
@@ -117,7 +123,7 @@ class _UploadpgState extends State<Uploadpg> {
       "name": nameController.text,
       "mobile_no": Mob_No_Controller.text,
       "email": emailController.text,
-      "image": fileName
+      "image": FileUploads.d!.rurl
     };
     print(data);
 
