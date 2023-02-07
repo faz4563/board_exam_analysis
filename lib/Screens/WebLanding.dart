@@ -19,7 +19,7 @@ class WebLanding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool isScreenWide = MediaQuery.of(context).size.width <= 1100;
+    bool isScreenWide = MediaQuery.of(context).size.width >= 1100;
     return SingleChildScrollView(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -138,139 +138,133 @@ class WebLanding extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                     side: const BorderSide(color: Color(0xFFE8E8E8), width: 2)),
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10.w),
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(top: 20.h, left: 5.w),
-                              child: const FittedBox(
-                                fit: BoxFit.contain,
-                                child: Image(
-                                    image: AssetImage(analysis),
-                                    height: 130,
-                                    width: 130),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 10.w,
-                            ),
-                            SizedBox(
-                              // color: Colors.red,
-                              child: FittedBox(
-                                fit: BoxFit.contain,
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    // SizedBox(
-                                    //   height: MediaQuery.of(context).size.height *
-                                    //       0.1,
-                                    // ),
-
-                                    Padding(
-                                      padding: EdgeInsets.only(top: 15.h),
-                                      child: Text(
-                                        'Features :',
-                                        style: TextStyle(
-                                          decoration: TextDecoration.none,
-                                          color: const Color(0xFF303030),
-                                          fontFamily: monb,
-                                          letterSpacing: 0.63,
-                                          fontWeight: FontWeight.w700,
-                                          fontSize: isScreenWide ? 12.h : 14.h,
-
-                                          // fontStyle: FontStyle.italic,
-                                        ),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height: 5.h,
-                                    ),
-                                    SizedBox(
-                                      height:
-                                          MediaQuery.of(context).size.height *
-                                              0.28,
-                                      width: MediaQuery.of(context).size.width *
-                                          0.18,
-                                      child: ListView.builder(
-                                          itemCount: FeaturesList.length,
-                                          physics:
-                                              const NeverScrollableScrollPhysics(),
-                                          itemExtent: 25.h,
-                                          itemBuilder: (context, index) => Row(
-                                                children: [
-                                                  Icon(
-                                                    Icons.brightness_1_rounded,
-                                                    color:
-                                                        const Color(0xFFBFDB38),
-                                                    size: 10.h,
-                                                  ),
-                                                  SizedBox(
-                                                    width: 3.w,
-                                                  ),
-                                                  Expanded(
-                                                    child: Text(
-                                                      FeaturesList[index],
-                                                      style: TextStyle(
-                                                          fontSize: isScreenWide
-                                                              ? 10.h
-                                                              : 10.h,
-                                                          letterSpacing: 0.23,
-                                                          fontFamily: rubm,
-                                                          fontWeight:
-                                                              FontWeight.w500),
-                                                    ),
-                                                  )
-                                                ],
-                                              )),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.05,
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(bottom: 10.h),
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                fixedSize: Size(40.w, 30.h),
-                                backgroundColor: ButtonEnabled == true
-                                    ? const Color(0xFF1F8A70)
-                                    : Colors.grey),
-                            onPressed: ButtonEnabled == true
-                                ? () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => Uploadpg(
-                                                  RandomKey: RandomKey,
-                                                )));
-                                  }
-                                : null,
-                            child: FittedBox(
-                              fit: BoxFit.contain,
-                              child: Text(
-                                'Generate Report',
-                                style: TextStyle(
-                                    fontFamily: rubm,
-                                    fontSize: isScreenWide ? 11.h : 11.h),
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            // color: Colors.red,
+                            width: isScreenWide
+                                ? MediaQuery.of(context).size.width * 0.17
+                                : 70.w,
+                            height: isScreenWide
+                                ? MediaQuery.of(context).size.height * 0.35
+                                : 150.h,
+                            child: const Padding(
+                              padding: EdgeInsets.only(top: 20),
+                              child: Image(
+                                image: AssetImage(analysis),
+                                fit: BoxFit.fitWidth,
                               ),
                             ),
                           ),
+                          SizedBox(
+                            width: 10.w,
+                          ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(top: 30.h),
+                                child: Text(
+                                  'Features :',
+                                  style: TextStyle(
+                                    decoration: TextDecoration.none,
+                                    color: const Color(0xFF303030),
+                                    fontFamily: monb,
+                                    letterSpacing: 0.63,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 16.h,
+
+                                    // fontStyle: FontStyle.italic,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 10.h,
+                              ),
+                              SizedBox(
+                                height: isScreenWide ? 160.h : 150.h,
+                                width: isScreenWide ? 70.w : 70.w,
+                                child: ListView.builder(
+                                    itemCount: FeaturesList.length,
+                                    physics:
+                                        const NeverScrollableScrollPhysics(),
+                                    itemExtent: 30.h,
+                                    itemBuilder: (context, index) => FittedBox(
+                                          fit: BoxFit.cover,
+                                          child: SizedBox(
+                                            height: 200.h,
+                                            width: 70.w,
+                                            child: Row(
+                                              children: [
+                                                Icon(
+                                                  Icons.brightness_1_rounded,
+                                                  color:
+                                                      const Color(0xFFBFDB38),
+                                                  size: 10.h,
+                                                ),
+                                                SizedBox(
+                                                  width: 3.w,
+                                                ),
+                                                Expanded(
+                                                  child: Text(
+                                                    FeaturesList[index],
+                                                    style: TextStyle(
+                                                        fontSize: 14.h,
+                                                        letterSpacing: 0.23,
+                                                        fontFamily: rubm,
+                                                        fontWeight:
+                                                            FontWeight.w500),
+                                                  ),
+                                                )
+                                              ],
+                                            ),
+                                          ),
+                                        )),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.02,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(bottom: 10.h),
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              fixedSize: Size(40.w, 30.h),
+                              backgroundColor: ButtonEnabled == true
+                                  ? const Color(0xFF1F8A70)
+                                  : Colors.grey),
+                          onPressed: ButtonEnabled == true
+                              ? () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Uploadpg(
+                                                RandomKey: RandomKey,
+                                              )));
+                                }
+                              : null,
+                          child: FittedBox(
+                            fit: BoxFit.contain,
+                            child: Text(
+                              'Generate Report',
+                              style: TextStyle(
+                                  fontFamily: rubm,
+                                  fontSize: isScreenWide ? 11.h : 11.h),
+                            ),
+                          ),
                         ),
-                      ]),
-                ),
+                      ),
+                    ]),
               ),
             ),
           ),

@@ -1,21 +1,14 @@
 // ignore_for_file: non_constant_identifier_names
 
-import 'dart:convert';
-import 'dart:math';
 
 import 'package:board_exam_analysis/controllers/ApiController.dart';
 import 'package:board_exam_analysis/utils/ApiConstants.dart';
-import 'package:board_exam_analysis/utils/fonts.dart';
 import 'package:board_exam_analysis/utils/images.dart';
-import 'package:board_exam_analysis/utils/widget.dart';
-import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../model/GettingRandomModel.dart';
 import 'MobileLanding.dart';
 import 'WebLanding.dart';
-import 'uploadpg.dart';
 
 class Landingpg extends StatefulWidget {
   const Landingpg({super.key});
