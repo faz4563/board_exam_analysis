@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, file_names
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -19,7 +21,7 @@ class WebLanding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool isScreenWide = MediaQuery.of(context).size.width >= 1100;
+    bool isScreenWide = MediaQuery.of(context).size.width >= 1000;
     return SingleChildScrollView(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -27,7 +29,7 @@ class WebLanding extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsets.only(
-                top: isScreenWide ? 15.h : 20.0.h, bottom: 10.h),
+                top: isScreenWide ? 30.h : 20.0.h, bottom: 10.h),
             child: FittedBox(
               fit: BoxFit.contain,
               child: Text(
@@ -53,7 +55,7 @@ class WebLanding extends StatelessWidget {
                 'GET 360 (DEGREE) ANALYSIS OF YOUR',
                 style: TextStyle(
                     decoration: TextDecoration.none,
-                    fontSize: isScreenWide ? 16.h : 18.0.h,
+                    fontSize: isScreenWide ? 16.h : 16.0.h,
                     letterSpacing: 0.94,
                     fontWeight: FontWeight.w900,
                     fontFamily: rubm),
@@ -68,7 +70,7 @@ class WebLanding extends StatelessWidget {
                     decoration: TextDecoration.none,
                     fontWeight: FontWeight.w900,
                     letterSpacing: 0.94,
-                    fontSize: isScreenWide ? 14.h : 18.0.h,
+                    fontSize: isScreenWide ? 16.h : 16.0.h,
                     fontFamily: rubm),
                 gradient: const LinearGradient(colors: [
                   Color(0xFF25D0DE),
@@ -94,7 +96,7 @@ class WebLanding extends StatelessWidget {
                     fontFamily: nunr,
                     fontWeight: FontWeight.w900,
                     color: const Color(0xFF00425A),
-                    fontSize: isScreenWide ? 10.h : 12.0.h,
+                    fontSize: isScreenWide ? 14.h : 12.0.h,
                   ),
                 ),
                 SizedBox(width: 10.w),
@@ -106,7 +108,7 @@ class WebLanding extends StatelessWidget {
                     letterSpacing: 0.35,
                     fontWeight: FontWeight.w900,
                     color: const Color(0xFF00425A),
-                    fontSize: isScreenWide ? 10.h : 12.0.h,
+                    fontSize: isScreenWide ? 14.h : 12.0.h,
                   ),
                 ),
                 SizedBox(width: 10.w),
@@ -118,7 +120,7 @@ class WebLanding extends StatelessWidget {
                     fontWeight: FontWeight.w900,
                     letterSpacing: 0.35,
                     color: const Color(0xFF00425A),
-                    fontSize: isScreenWide ? 10.h : 12.0.h,
+                    fontSize: isScreenWide ? 14.h : 12.0.h,
                   ),
                 )
               ],
@@ -153,12 +155,14 @@ class WebLanding extends StatelessWidget {
                                 : 50.w,
                             height: isScreenWide
                                 ? MediaQuery.of(context).size.height * 0.30
-                                : 100.h,
-                            child: const Padding(
+                                : 80.h,
+                            child: Padding(
                               padding: EdgeInsets.only(top: 20),
                               child: Image(
                                 image: AssetImage(analysis),
-                                fit: BoxFit.contain,
+                                fit: isScreenWide
+                                    ? BoxFit.cover
+                                    : BoxFit.contain,
                               ),
                             ),
                           ),
