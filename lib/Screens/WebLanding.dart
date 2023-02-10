@@ -150,15 +150,15 @@ class WebLanding extends StatelessWidget {
                             // color: Colors.red,
                             width: isScreenWide
                                 ? MediaQuery.of(context).size.width * 0.17
-                                : 70.w,
+                                : 50.w,
                             height: isScreenWide
-                                ? MediaQuery.of(context).size.height * 0.35
-                                : 150.h,
+                                ? MediaQuery.of(context).size.height * 0.30
+                                : 100.h,
                             child: const Padding(
                               padding: EdgeInsets.only(top: 20),
                               child: Image(
                                 image: AssetImage(analysis),
-                                fit: BoxFit.fitWidth,
+                                fit: BoxFit.contain,
                               ),
                             ),
                           ),
