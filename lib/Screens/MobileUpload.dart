@@ -150,7 +150,8 @@ class _MobileUploadState extends State<MobileUpload> {
               ),
               child: Column(children: [
                 Padding(
-                  padding: EdgeInsets.only(top: 29.0.h, bottom: 10.h),
+                  padding: EdgeInsets.only(
+                      top: 29.0.h, bottom: 10.h, left: 10, right: 10),
                   child: Text(
                     "CENTRAL BOARD OF SECONDARY EDUCATION",
                     textAlign: TextAlign.center,
@@ -158,49 +159,53 @@ class _MobileUploadState extends State<MobileUpload> {
                       decoration: TextDecoration.none,
                       color: const Color(0xFF313131),
                       fontFamily: monb,
-                      letterSpacing: 0.94,
-                      fontWeight: FontWeight.w700,
-                      fontSize: 16.h,
-
-                      // fontStyle: FontStyle.italic,
+                      letterSpacing: 0.64,
+                      fontWeight: FontWeight.w800,
+                      fontSize: 13.h,
                     ),
                   ),
                 ),
-                SizedBox(height: 1.h),
-                FittedBox(
-                  fit: BoxFit.contain,
+                SizedBox(height: 1.5.h),
+                SizedBox(
+                  width: 500.w,
                   child: Padding(
                     padding: EdgeInsets.symmetric(horizontal: 20.w),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        GradientText(
-                          'GET 360 (DEGREE) ANALYSIS OF YOUR',
-                          style: TextStyle(
-                              decoration: TextDecoration.none,
-                              fontSize: 18.0.h,
-                              letterSpacing: 0.94,
-                              fontWeight: FontWeight.w900,
-                              fontFamily: rubm),
-                          gradient: const LinearGradient(colors: [
-                            Color(0xFF25D0DE),
-                            Color(0xFFF638F7),
-                          ]),
-                        ),
-                        GradientText(
-                          'SCHOOL\'S CBSE RESULTS',
-                          style: TextStyle(
-                              decoration: TextDecoration.none,
-                              fontWeight: FontWeight.w900,
-                              letterSpacing: 0.94,
-                              fontSize: 18.0.h,
-                              fontFamily: rubm),
-                          gradient: const LinearGradient(colors: [
-                            Color(0xFF25D0DE),
-                            Color(0xFFF638F7),
-                          ]),
-                        ),
-                      ],
+                    child: FittedBox(
+                      fit: BoxFit.contain,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          GradientText(
+                            'GET 360 (DEGREE) ANALYSIS OF YOUR',
+                            style: TextStyle(
+                                decoration: TextDecoration.none,
+                                fontSize: 16.0.h,
+                                letterSpacing: 0.94,
+                                fontWeight: FontWeight.w900,
+                                fontFamily: rubm),
+                            gradient: const LinearGradient(colors: [
+                              Color(0xFF25D0DE),
+                              Color(0xFFF638F7),
+                            ]),
+                          ),
+                          SizedBox(
+                            height: 5.h,
+                          ),
+                          GradientText(
+                            'SCHOOL\'S CBSE RESULTS',
+                            style: TextStyle(
+                                decoration: TextDecoration.none,
+                                fontWeight: FontWeight.w900,
+                                letterSpacing: 0.94,
+                                fontSize: 16.0.h,
+                                fontFamily: rubm),
+                            gradient: const LinearGradient(colors: [
+                              Color(0xFF25D0DE),
+                              Color(0xFFF638F7),
+                            ]),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -1253,88 +1258,145 @@ class _MobileUploadState extends State<MobileUpload> {
 
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: FittedBox(
-              fit: BoxFit.contain,
+            child: SizedBox(
+              width: 100,
               child: GlowingText(
-                  text: 'We\'d Love To Hear From You', fontSize: 18.h),
+                  text: 'We\'d Love To Hear From You', fontSize: 13.h),
             ),
           ),
-          SizedBox(height: 7.h),
+          SizedBox(height: 8.h),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  'If you would like to know more about our products and services, our team would be happy to speak to you.',
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      width: 500,
+                      child: RichText(
+                        textAlign: TextAlign.center,
+                        text: TextSpan(children: <TextSpan>[
+                          TextSpan(
+                              text: 'If you would like to know more about our ',
+                              style: TextStyle(
+                                decoration: TextDecoration.none,
+                                fontFamily: rubm,
+                                letterSpacing: 0.21,
+                                color: const Color(0xff343434),
+                                fontStyle: FontStyle.normal,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 12.h,
+                              )),
+                          TextSpan(
+                              text: 'Products ',
+                              style: TextStyle(
+                                decoration: TextDecoration.none,
+                                fontFamily: rubm,
+                                letterSpacing: 0.21,
+                                color: const Color(0xFF1F8A70),
+                                fontStyle: FontStyle.normal,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 12.h,
+                              )),
+                          TextSpan(
+                              text: 'and ',
+                              style: TextStyle(
+                                decoration: TextDecoration.none,
+                                fontFamily: rubm,
+                                letterSpacing: 0.21,
+                                color: const Color(0xff343434),
+                                fontStyle: FontStyle.normal,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 12.h,
+                              )),
+                          TextSpan(
+                              text: 'Services,',
+                              style: TextStyle(
+                                decoration: TextDecoration.none,
+                                fontFamily: rubm,
+                                letterSpacing: 0.21,
+                                color: const Color(0xFF1F8A70),
+                                fontStyle: FontStyle.normal,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 12.h,
+                                height: 1.5,
+                              )),
+                          TextSpan(
+                              text: ' our team would be happy to speak to you.',
+                              style: TextStyle(
+                                decoration: TextDecoration.none,
+                                fontFamily: rubm,
+                                letterSpacing: 0.21,
+                                color: const Color(0xff343434),
+                                fontStyle: FontStyle.normal,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 12.h,
+                                height: 1.5,
+                              )),
+                        ]),
+                      ),
+                    )
+                  ])),
+          SizedBox(height: 10.h),
+          SizedBox(
+            width: 100.w,
+            child: Center(
+              child: RichText(
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    decoration: TextDecoration.none,
-                    fontFamily: rubm,
-                    letterSpacing: 0.21,
-                    color: const Color(0xff6A6A6A),
-                    fontStyle: FontStyle.italic,
-                    fontWeight: FontWeight.w400,
-                    fontSize: 15.h,
-                  ),
-                ),
-                SizedBox(height: 5.h),
-                Center(
-                  child: RichText(
-                    textAlign: TextAlign.center,
-                    text: TextSpan(
-                      style: DefaultTextStyle.of(context).style,
-                      children: <TextSpan>[
-                        TextSpan(
-                          text: 'Reach us at ',
-                          style: TextStyle(
-                            decoration: TextDecoration.none,
-                            fontFamily: rubr,
-                            letterSpacing: 0.06,
-                            color: const Color(0xff272727),
-                            fontWeight: FontWeight.w100,
-                            fontSize: 15.h,
-                          ),
+                  text: TextSpan(
+                    style: DefaultTextStyle.of(context).style,
+                    children: <TextSpan>[
+                      TextSpan(
+                        text: 'Reach us at ',
+                        style: TextStyle(
+                          decoration: TextDecoration.none,
+                          fontFamily: rubr,
+                          letterSpacing: 0.06,
+                          fontStyle: FontStyle.italic,
+                          color: const Color(0xff272727),
+                          fontWeight: FontWeight.w100,
+                          fontSize: 12.h,
                         ),
-                        TextSpan(
-                          text: ' 8880280005',
-                          style: TextStyle(
-                            decoration: TextDecoration.none,
-                            letterSpacing: 0.06,
-                            fontFamily: rubm,
-                            fontWeight: FontWeight.w600,
-                            color: const Color(0xff272727),
-                            fontSize: 15.h,
-                          ),
+                      ),
+                      TextSpan(
+                        text: ' 8880280005',
+                        style: TextStyle(
+                          decoration: TextDecoration.none,
+                          letterSpacing: 0.06,
+                          fontFamily: rubm,
+                          fontWeight: FontWeight.w500,
+                          fontStyle: FontStyle.italic,
+                          color: const Color(0xff272727),
+                          fontSize: 12.h,
                         ),
-                        TextSpan(
-                          text: ' or drop an email to ',
-                          style: TextStyle(
-                            decoration: TextDecoration.none,
-                            fontFamily: rubr,
-                            letterSpacing: 0.06,
-                            color: const Color(0xff272727),
-                            fontWeight: FontWeight.w100,
-                            fontSize: 15.h,
-                          ),
+                      ),
+                      TextSpan(
+                        text: ' or \ndrop an email to ',
+                        style: TextStyle(
+                          decoration: TextDecoration.none,
+                          fontFamily: rubr,
+                          fontStyle: FontStyle.italic,
+                          letterSpacing: 0.06,
+                          color: const Color(0xff272727),
+                          fontWeight: FontWeight.w100,
+                          fontSize: 12.h,
                         ),
-                        TextSpan(
-                          text: ' hello@neverskip.com',
-                          style: TextStyle(
-                            decoration: TextDecoration.none,
-                            fontFamily: rubm,
-                            fontWeight: FontWeight.w600,
-                            letterSpacing: 0.06,
-                            color: const Color(0xff272727),
-                            fontSize: 15.h,
-                          ),
+                      ),
+                      TextSpan(
+                        text: ' hello@neverskip.com',
+                        style: TextStyle(
+                          decoration: TextDecoration.none,
+                          fontFamily: rubm,
+                          fontWeight: FontWeight.w500,
+                          letterSpacing: 0.06,
+                          fontStyle: FontStyle.italic,
+                          color: const Color(0xff272727),
+                          fontSize: 12.h,
+                          height: 1.5,
                         ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
+                      ),
+                    ],
+                  )),
             ),
           ),
           SizedBox(height: 10.h),
@@ -1343,44 +1405,40 @@ class _MobileUploadState extends State<MobileUpload> {
             thickness: 0.5,
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Row(
+            padding: const EdgeInsets.symmetric(horizontal: 0),
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Stack(
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Positioned(
-                      bottom: 10,
-                      child: Text(
-                        'www.neverskip.com',
-                        style: TextStyle(
-                            decoration: TextDecoration.none,
-                            fontFamily: rubr,
-                            letterSpacing: 0.06,
-                            fontWeight: FontWeight.bold,
-                            color: const Color(0xFF00425A),
-                            fontSize: 8.h),
-                      ),
-                    ),
-                    Align(
-                      alignment: Alignment.topCenter,
-                      child: Image(
-                        image: const AssetImage(logo),
-                        width: 60.w,
-                        height: 60.h,
-                      ),
+                    Image(
+                      image: const AssetImage(logo),
+                      width: 140.w,
+                      height: 50.h,
                     ),
                   ],
                 ),
-                SizedBox(
-                  width: 30.w,
+                Text(
+                  'www.neverskip.com',
+                  style: TextStyle(
+                      decoration: TextDecoration.none,
+                      fontFamily: rubr,
+                      letterSpacing: 1,
+                      fontWeight: FontWeight.bold,
+                      color: const Color(0xFF00425A),
+                      fontSize: 12.h),
                 ),
+                // SizedBox(
+                //   width: 30.w,
+                // ),
                 Padding(
                   padding: EdgeInsets.only(top: 10.h),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
                         'Jarulss Software Solutions Pvt Ltd',
@@ -1389,22 +1447,66 @@ class _MobileUploadState extends State<MobileUpload> {
                             fontFamily: 'Montserrat',
                             fontWeight: FontWeight.bold,
                             color: const Color(0xFF333333),
-                            fontSize: 10.h),
+                            fontSize: 12.h),
                       ),
                       SizedBox(
                         height: 5.h,
                       ),
                       SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.5,
-                        height: 50.h,
-                        child: Text(
-                          '#47, Razaak Garden Road, Arumbakkam, Chennai,Tamil Nadu 600106',
-                          style: TextStyle(
-                              decoration: TextDecoration.none,
-                              fontFamily: rubr,
-                              fontWeight: FontWeight.w400,
-                              color: const Color(0xFF636363),
-                              fontSize: 10.h),
+                        width: MediaQuery.of(context).size.width * 0.6,
+                        height: 80.h,
+                        child: Column(
+                          children: [
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.7,
+                              child: const Text(
+                                '#47, Razaak Garden Road, Arumbakkam, Chennai,Tamil Nadu 600106',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    decoration: TextDecoration.none,
+                                    fontFamily: rubr,
+                                    height: 1.5,
+                                    fontWeight: FontWeight.w400,
+                                    color: Color(0xff343434),
+                                    fontSize: 11),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Expanded(
+                              child: SizedBox(
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      Icons.copyright_rounded,
+                                      color: const Color(0xff00425A),
+                                      size: 16.h,
+                                    ),
+                                    SizedBox(
+                                      width: 3.w,
+                                    ),
+                                    Expanded(
+                                      child: FittedBox(
+                                        fit: BoxFit.contain,
+                                        child: Text(
+                                          '2023 Neverskip. All Rights Reserved',
+                                          style: TextStyle(
+                                              decoration: TextDecoration.none,
+                                              fontFamily: rubr,
+                                              fontWeight: FontWeight.w400,
+                                              color: const Color(0xff00425A),
+                                              fontSize: 10.h),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ],
@@ -1413,39 +1515,6 @@ class _MobileUploadState extends State<MobileUpload> {
               ],
             ),
           ),
-
-          // SizedBox(
-          //   height: 10.h,
-          // ),
-          Align(
-            alignment: Alignment.center,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.copyright_rounded,
-                  color: const Color(0xff00425A),
-                  size: 18.h,
-                ),
-                SizedBox(
-                  width: 3.w,
-                ),
-                Text(
-                  '2023 Neverskip. All Rights Reserved',
-                  style: TextStyle(
-                      decoration: TextDecoration.none,
-                      fontFamily: rubr,
-                      fontWeight: FontWeight.w400,
-                      color: const Color(0xff00425A),
-                      fontSize: 10.h),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 5.h,
-          )
         ]));
   }
 

@@ -38,7 +38,7 @@ class GlowingText extends StatefulWidget {
   GlowingText({
     required this.text,
     this.fontSize = 20,
-    this.color = const Color(0xff00425A),
+    this.color = const Color(0xFF00425A),
     this.duration = const Duration(milliseconds: 500),
   });
 
@@ -59,7 +59,7 @@ class _GlowingTextState extends State<GlowingText> {
     return Future.delayed(
       const Duration(seconds: 2),
       () {
-        Timer.periodic(const Duration(seconds: 1), (timer) {
+        Timer.periodic(const Duration(seconds: 3), (timer) {
           if (mounted) {
             setState(() {
               _isGlowing = !_isGlowing;
@@ -78,14 +78,17 @@ class _GlowingTextState extends State<GlowingText> {
           ? TextStyle(
               color: widget.color,
               fontSize: widget.fontSize,
-              fontFamily: monb,
-              fontWeight: FontWeight.bold)
+              fontFamily: rubm,
+              fontWeight: FontWeight.w500)
           : TextStyle(
               color: Colors.white,
               fontSize: widget.fontSize,
-              fontFamily: monb,
-              fontWeight: FontWeight.bold),
-      child: Text(widget.text),
+              fontFamily: rubm,
+              fontWeight: FontWeight.w500),
+      child: Text(
+        widget.text,
+        textAlign: TextAlign.center,
+      ),
     );
   }
 }
