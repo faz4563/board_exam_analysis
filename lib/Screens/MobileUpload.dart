@@ -212,7 +212,7 @@ class _MobileUploadState extends State<MobileUpload> {
                 SizedBox(height: 15.h),
                 Container(
                     width: 338.w,
-                    height: 790.h,
+                    height: 830.h,
                     decoration: BoxDecoration(
                         color: const Color(0xffFBFBFB),
                         border: Border.all(color: const Color(0xffE8E8E8)),
@@ -225,7 +225,7 @@ class _MobileUploadState extends State<MobileUpload> {
                           )
                         : Container(
                             width: 338.w,
-                            height: 970.h,
+                            height: 990.h,
                             decoration: BoxDecoration(
                                 color: const Color(0xffFBFBFB),
                                 border:
@@ -336,7 +336,7 @@ class _MobileUploadState extends State<MobileUpload> {
                                         ),
                                         SizedBox(
                                           width: 308.w,
-                                          height: 50.h,
+                                          height: 60.h,
                                           child: TextFormField(
                                             readOnly: false,
                                             autovalidateMode: AutovalidateMode
@@ -451,7 +451,7 @@ class _MobileUploadState extends State<MobileUpload> {
                                     // ),
                                     SizedBox(
                                       width: 308.w,
-                                      height: 50.h,
+                                      height: 60.h,
                                       child: TextFormField(
                                         readOnly: false,
                                         autovalidateMode:
@@ -559,7 +559,7 @@ class _MobileUploadState extends State<MobileUpload> {
                                     ),
                                     SizedBox(
                                       width: 308.w,
-                                      height: 50.h,
+                                      height: 60.h,
                                       child: TextFormField(
                                         readOnly: false,
                                         autovalidateMode:
@@ -667,7 +667,7 @@ class _MobileUploadState extends State<MobileUpload> {
                                     ),
                                     SizedBox(
                                       width: 308.w,
-                                      height: 50.h,
+                                      height: 60.h,
                                       child: DropdownButtonFormField<String>(
                                         value: selectedState,
                                         hint: Text(
@@ -799,7 +799,7 @@ class _MobileUploadState extends State<MobileUpload> {
                                         ),
                                         SizedBox(
                                           width: 308.w,
-                                          height: 50.h,
+                                          height: 60.h,
                                           child: TextFormField(
                                             readOnly: false,
                                             autovalidateMode: AutovalidateMode
@@ -899,7 +899,7 @@ class _MobileUploadState extends State<MobileUpload> {
                                     ),
                                     SizedBox(
                                       width: 308.w,
-                                      height: 50.h,
+                                      height: 60.h,
                                       child: TextFormField(
                                         readOnly: false,
                                         autovalidateMode:
