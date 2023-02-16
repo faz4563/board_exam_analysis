@@ -10,7 +10,6 @@ import 'package:flutter/material.dart';
 import 'package:board_exam_analysis/utils/images.dart';
 import 'package:board_exam_analysis/utils/fonts.dart';
 import 'package:board_exam_analysis/utils/widget.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:http/http.dart' as http;
 import '../model/pdfModel.dart';
 import '../utils/ApiConstants.dart';
@@ -155,34 +154,34 @@ class _WebUploadPgState extends State<WebUploadPg> {
               ),
               child: Column(
                 children: [
-                  Padding(
-                    padding: EdgeInsets.only(top: 30.0.h, bottom: 10.h),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 30.0, bottom: 10),
                     child: Text(
                       "CENTRAL BOARD OF SECONDARY EDUCATION",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         decoration: TextDecoration.none,
-                        color: const Color(0xFF313131),
+                        color: Color(0xFF313131),
                         fontFamily: monb,
                         letterSpacing: 0.94,
                         fontWeight: FontWeight.w700,
-                        fontSize: 18.h,
+                        fontSize: 14,
                       ),
                     ),
                   ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
+                    children: const [
                       GradientText(
                         'GET 360 (DEGREE) ANALYSIS OF YOUR',
                         style: TextStyle(
                             decoration: TextDecoration.none,
-                            fontSize: 30.0.h,
+                            fontSize: 28,
                             letterSpacing: 0.94,
                             fontWeight: FontWeight.w900,
                             fontFamily: rubm),
-                        gradient: const LinearGradient(colors: [
+                        gradient: LinearGradient(colors: [
                           Color(0xFF25D0DE),
                           Color(0xFFF638F7),
                         ]),
@@ -193,1274 +192,1417 @@ class _WebUploadPgState extends State<WebUploadPg> {
                             decoration: TextDecoration.none,
                             fontWeight: FontWeight.w900,
                             letterSpacing: 0.94,
-                            fontSize: 30.0.h,
+                            fontSize: 28,
                             fontFamily: rubm),
-                        gradient: const LinearGradient(colors: [
+                        gradient: LinearGradient(colors: [
                           Color(0xFF25D0DE),
                           Color(0xFFF638F7),
                         ]),
                       ),
                     ],
                   ),
-                  SizedBox(height: 15.h),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        '1. Enter Details Of Your School',
-                        style: TextStyle(
+                  const SizedBox(height: 10),
+                  FittedBox(
+                    fit: BoxFit.contain,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: const [
+                        Text(
+                          '1. Enter Details Of Your School',
+                          style: TextStyle(
                             decoration: TextDecoration.none,
                             fontFamily: nunr,
                             letterSpacing: 0.35,
                             fontWeight: FontWeight.w900,
-                            color: const Color(0xFF00425A),
-                            fontSize: 14.h),
-                      ),
-                      SizedBox(width: 10.w),
-                      Text(
-                        '2. Upload Files',
-                        style: TextStyle(
+                            color: Color(0xFF00425A),
+                            fontSize: 12.0,
+                          ),
+                        ),
+                        SizedBox(width: 20),
+                        Text(
+                          '2. Upload Files',
+                          style: TextStyle(
                             decoration: TextDecoration.none,
                             fontFamily: nunr,
                             letterSpacing: 0.35,
                             fontWeight: FontWeight.w900,
-                            color: const Color(0xFF00425A),
-                            fontSize: 14.h),
-                      ),
-                      SizedBox(width: 10.w),
-                      Text(
-                        '3. Download A Detailed Report',
-                        style: TextStyle(
+                            color: Color(0xFF00425A),
+                            fontSize: 12.0,
+                          ),
+                        ),
+                        SizedBox(width: 20),
+                        Text(
+                          '3. Download A Detailed Report',
+                          style: TextStyle(
                             decoration: TextDecoration.none,
                             fontFamily: nunr,
                             letterSpacing: 0.35,
                             fontWeight: FontWeight.w900,
-                            color: const Color(0xFF00425A),
-                            fontSize: 14.h),
-                      )
-                    ],
+                            color: Color(0xFF00425A),
+                            fontSize: 12.0,
+                          ),
+                        )
+                      ],
+                    ),
                   ),
-                  SizedBox(
-                    height: 30.h,
-                  ),
-                  Container(
-                    // width: MediaQuery.of(context).size.width / 2,
-                    decoration: BoxDecoration(
-                        color: const Color(0xffFBFBFB),
-                        border: Border.all(color: const Color(0xffE8E8E8)),
-                        // color: Colors.red,
-                        borderRadius: BorderRadius.circular(15)),
-                    // height: MediaQuery.of(context).size.height / 2,
-                    child: PdfPreview == true
-                        ? Iframe(
-                            pdfLink: PdfData.d!.data,
-                          )
-                        : Container(
-                            width: MediaQuery.of(context).size.width / 2,
-                            decoration: BoxDecoration(
-                                color: const Color(0xffFBFBFB),
-                                border:
-                                    Border.all(color: const Color(0xffE8E8E8)),
-                                // color: Colors.red,
-                                borderRadius: BorderRadius.circular(15)),
-                            // height: MediaQuery.of(context).size.height / 2,
-                            child: Column(children: [
-                              Align(
-                                alignment: Alignment.centerLeft,
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: 10.w, vertical: 5.h),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsets.symmetric(
-                                            vertical: 10.h),
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsets.symmetric(
-                                                  vertical: 10.h,
-                                                  horizontal: 0.w),
-                                              child: Text(
-                                                "School Info",
-                                                style: TextStyle(
-                                                    decoration:
-                                                        TextDecoration.none,
-                                                    fontFamily: 'Montserrat',
-                                                    letterSpacing: 0.42,
-                                                    fontWeight: FontWeight.bold,
-                                                    color:
-                                                        const Color(0xFF448CF3),
-                                                    fontSize: 16.h),
-                                              ),
-                                            ),
-                                            SizedBox(
-                                              width: 50.w,
-                                            ),
-                                            InkWell(
-                                              onTap: () =>
-                                                  Navigator.pop(context),
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceEvenly,
-                                                children: [
-                                                  Icon(
-                                                    Icons.arrow_back_ios,
-                                                    color:
-                                                        const Color(0xFF8993B9),
-                                                    size: 10.h,
-                                                  ),
-                                                  Text(
-                                                    "Back",
-                                                    style: TextStyle(
-                                                        decoration:
-                                                            TextDecoration.none,
-                                                        fontFamily:
-                                                            'Montserrat',
-                                                        letterSpacing: 0.52,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                        color: const Color(
-                                                            0xFF8993B9),
-                                                        fontSize: 13.h),
-                                                  )
-                                                ],
-                                              ),
-                                            )
-                                          ],
-                                        ),
-                                      ),
-                                      // SizedBox(
-                                      //   height: 10.h,
-                                      // ),
-                                      SizedBox(
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            RichText(
-                                              text: TextSpan(
-                                                style:
-                                                    DefaultTextStyle.of(context)
-                                                        .style,
-                                                children: <TextSpan>[
-                                                  TextSpan(
-                                                    text: 'School Name ',
-                                                    style: TextStyle(
+                  const SizedBox(height: 20),
+                  FittedBox(
+                    fit: BoxFit.contain,
+                    child: Container(
+                      // width: MediaQuery.of(context).size.width / 2,
+                      decoration: BoxDecoration(
+                          color: const Color(0xffFBFBFB),
+                          border: Border.all(color: const Color(0xffE8E8E8)),
+                          // color: Colors.red,
+                          borderRadius: BorderRadius.circular(15)),
+                      // height: MediaQuery.of(context).size eight / 2,
+                      child: PdfPreview == true
+                          ? Iframe(
+                              pdfLink: PdfData.d!.data,
+                            )
+                          : Container(
+                              width: MediaQuery.of(context).size.width / 2,
+                              decoration: BoxDecoration(
+                                  color: const Color(0xffFBFBFB),
+                                  border: Border.all(
+                                      color: const Color(0xffE8E8E8)),
+                                  // color: Colors.red,
+                                  borderRadius: BorderRadius.circular(15)),
+                              // height: MediaQuery.of(context).size eight / 2,
+                              child: Column(children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 20, vertical: 5),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              vertical: 10),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              const Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                    vertical: 10,
+                                                    horizontal: 0),
+                                                child: Text(
+                                                  "School Info",
+                                                  style: TextStyle(
                                                       decoration:
                                                           TextDecoration.none,
-                                                      fontFamily: 'Muli',
-                                                      letterSpacing: 0.36,
-                                                      color: const Color(
-                                                          0xff828282),
+                                                      fontFamily: 'Montserrat',
+                                                      letterSpacing: 0.42,
                                                       fontWeight:
-                                                          FontWeight.w600,
-                                                      fontSize: 13.h,
-                                                    ),
-                                                  ),
-                                                  TextSpan(
-                                                    text: '*',
-                                                    style: TextStyle(
-                                                      decoration:
-                                                          TextDecoration.none,
-                                                      fontFamily: rubm,
-                                                      color:
-                                                          const Color.fromARGB(
-                                                              255, 231, 27, 27),
-                                                      fontSize: 15.h,
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                            SizedBox(
-                                              height: 5.h,
-                                            ),
-                                            SizedBox(
-                                              width: MediaQuery.of(context)
-                                                  .size
-                                                  .width,
-                                              height: 60.h,
-                                              child: TextFormField(
-                                                readOnly: false,
-                                                autovalidateMode:
-                                                    AutovalidateMode
-                                                        .onUserInteraction,
-                                                controller:
-                                                    schoolNameController,
-                                                decoration: InputDecoration(
-                                                    helperText: '',
-                                                    helperStyle:
-                                                        const TextStyle(
-                                                            fontSize: 1,
-                                                            height: 0),
-                                                    errorStyle: TextStyle(
-                                                        fontSize: 12.h,
-                                                        height: 0),
-                                                    fillColor:
-                                                        const Color(0xffffffff),
-                                                    contentPadding:
-                                                        const EdgeInsets.all(
-                                                            10.0),
-                                                    enabledBorder:
-                                                        OutlineInputBorder(
-                                                      borderSide:
-                                                          const BorderSide(
-                                                              color: Color(
-                                                                  0xffE8E8E8),
-                                                              width: 1.0),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              5.0),
-                                                    ),
-                                                    errorBorder:
-                                                        OutlineInputBorder(
-                                                      borderSide:
-                                                          const BorderSide(
-                                                              color: Colors.red,
-                                                              width: 1.0),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                        5.0,
-                                                      ),
-                                                    ),
-                                                    focusedBorder:
-                                                        OutlineInputBorder(
-                                                      borderSide:
-                                                          const BorderSide(
-                                                              color:
-                                                                  Colors.blue,
-                                                              width: 1.0),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                        5.0,
-                                                      ),
-                                                    ),
-                                                    hintStyle: TextStyle(
-                                                        fontSize: 10.h,
-                                                        color: const Color(
-                                                            0xffA8A8A8)),
-                                                    hintText:
-                                                        "Your School Name",
-                                                    prefixStyle:
-                                                        const TextStyle(
-                                                            color: Colors.grey),
-                                                    border: OutlineInputBorder(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              20),
-                                                    )),
-                                                keyboardType:
-                                                    TextInputType.name,
-                                                validator: (value) {
-                                                  if (value!.isEmpty) {
-                                                    return " Please enter Your School Name ";
-                                                  } else {
-                                                    return null;
-                                                  }
-                                                },
-                                                onChanged: (value) {},
-                                                obscureText: false,
-                                                style: const TextStyle(
-                                                  fontSize: 12.0,
-                                                  fontWeight: FontWeight.w200,
+                                                          FontWeight.bold,
+                                                      color: Color(0xFF448CF3),
+                                                      fontSize: 14),
                                                 ),
                                               ),
-                                            )
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              Align(
-                                alignment: Alignment.centerLeft,
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: 10.w, vertical: 10.h),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      SizedBox(
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            RichText(
-                                              text: TextSpan(
-                                                style:
-                                                    DefaultTextStyle.of(context)
-                                                        .style,
-                                                children: <TextSpan>[
-                                                  TextSpan(
-                                                    text: 'Address ',
-                                                    style: TextStyle(
-                                                      decoration:
-                                                          TextDecoration.none,
-                                                      fontFamily: 'Muli',
-                                                      color: const Color(
-                                                          0xff828282),
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      fontSize: 13.h,
-                                                    ),
-                                                  ),
-                                                  TextSpan(
-                                                    text: '*',
-                                                    style: TextStyle(
-                                                      decoration:
-                                                          TextDecoration.none,
-                                                      fontFamily: rubm,
-                                                      color:
-                                                          const Color.fromARGB(
-                                                              255, 231, 27, 27),
-                                                      fontSize: 15.h,
-                                                    ),
-                                                  ),
-                                                ],
+                                              const SizedBox(
+                                                width: 50,
                                               ),
-                                            ),
-                                            // SizedBox(
-                                            //   height: 3.h,
-                                            // ),
-                                            SizedBox(
-                                              width: MediaQuery.of(context)
-                                                  .size
-                                                  .width,
-                                              height: 60.h,
-                                              child: TextFormField(
-                                                readOnly: false,
-                                                autovalidateMode:
-                                                    AutovalidateMode
-                                                        .onUserInteraction,
-                                                controller: addressController,
-                                                decoration: InputDecoration(
-                                                    helperText: '',
-                                                    helperStyle:
-                                                        const TextStyle(
-                                                            fontSize: 1,
-                                                            height: 0),
-                                                    errorStyle: TextStyle(
-                                                        fontSize: 12.h,
-                                                        height: 0),
-                                                    fillColor:
-                                                        const Color(0xffffffff),
-                                                    contentPadding:
-                                                        const EdgeInsets.all(
-                                                            10.0),
-                                                    enabledBorder:
-                                                        OutlineInputBorder(
-                                                      borderSide:
-                                                          const BorderSide(
-                                                              color: Color(
-                                                                  0xffE8E8E8),
-                                                              width: 1.0),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              5.0),
-                                                    ),
-                                                    errorBorder:
-                                                        OutlineInputBorder(
-                                                      borderSide:
-                                                          const BorderSide(
-                                                              color: Colors.red,
-                                                              width: 1.0),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                        5.0,
-                                                      ),
-                                                    ),
-                                                    focusedBorder:
-                                                        OutlineInputBorder(
-                                                      borderSide:
-                                                          const BorderSide(
-                                                              color:
-                                                                  Colors.blue,
-                                                              width: 1.0),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                        5.0,
-                                                      ),
-                                                    ),
-                                                    hintStyle: TextStyle(
-                                                        fontSize: 10.h,
-                                                        color: const Color(
-                                                            0xffA8A8A8)),
-                                                    hintText: "School Address",
-                                                    prefixStyle:
-                                                        const TextStyle(
-                                                            color: Colors.grey),
-                                                    border: OutlineInputBorder(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              20),
-                                                    )),
-                                                keyboardType:
-                                                    TextInputType.name,
-                                                validator: (value) {
-                                                  if (value!.isEmpty) {
-                                                    return "Please enter Your Address";
-                                                  } else {
-                                                    return null;
-                                                  }
-                                                },
-                                                onChanged: (value) {},
-                                                obscureText: false,
-                                                style: const TextStyle(
-                                                  fontSize: 12.0,
-                                                  fontWeight: FontWeight.w200,
-                                                ),
-                                              ),
-                                            )
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              Row(
-                                children: [
-                                  Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: Padding(
-                                      padding: EdgeInsets.symmetric(
-                                          horizontal: 10.w, vertical: 10.h),
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          SizedBox(
-                                            child: Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                RichText(
-                                                  text: TextSpan(
-                                                    style: DefaultTextStyle.of(
-                                                            context)
-                                                        .style,
-                                                    children: <TextSpan>[
-                                                      TextSpan(
-                                                        text:
-                                                            'Enter Your City Name',
-                                                        style: TextStyle(
-                                                          decoration:
-                                                              TextDecoration
-                                                                  .none,
-                                                          fontFamily: 'Muli',
-                                                          color: const Color(
-                                                              0xff828282),
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                          fontSize: 13.h,
-                                                        ),
-                                                      ),
-                                                      TextSpan(
-                                                        text: '*',
-                                                        style: TextStyle(
-                                                          decoration:
-                                                              TextDecoration
-                                                                  .none,
-                                                          fontFamily: rubm,
-                                                          color: const Color
-                                                                  .fromARGB(
-                                                              255, 231, 27, 27),
-                                                          fontSize: 15.h,
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  height: 5.h,
-                                                ),
-                                                SizedBox(
-                                                  width: MediaQuery.of(context)
-                                                          .size
-                                                          .width *
-                                                      0.19,
-                                                  height: 60.h,
-                                                  child: TextFormField(
-                                                    readOnly: false,
-                                                    autovalidateMode:
-                                                        AutovalidateMode
-                                                            .onUserInteraction,
-                                                    controller: cityController,
-                                                    decoration: InputDecoration(
-                                                        helperText: '',
-                                                        helperStyle:
-                                                            const TextStyle(
-                                                                fontSize: 1,
-                                                                height: 0),
-                                                        errorStyle: TextStyle(
-                                                            fontSize: 12.h,
-                                                            height: 0),
-                                                        fillColor: const Color(
-                                                            0xffffffff),
-                                                        contentPadding:
-                                                            const EdgeInsets.all(
-                                                                10.0),
-                                                        enabledBorder:
-                                                            OutlineInputBorder(
-                                                          borderSide:
-                                                              const BorderSide(
-                                                                  color: Color(
-                                                                      0xffE8E8E8),
-                                                                  width: 1.0),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      5.0),
-                                                        ),
-                                                        errorBorder:
-                                                            OutlineInputBorder(
-                                                          borderSide:
-                                                              const BorderSide(
-                                                                  color: Colors
-                                                                      .red,
-                                                                  width: 1.0),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                            5.0,
-                                                          ),
-                                                        ),
-                                                        focusedBorder:
-                                                            OutlineInputBorder(
-                                                          borderSide:
-                                                              const BorderSide(
-                                                                  color: Colors
-                                                                      .blue,
-                                                                  width: 1.0),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                            5.0,
-                                                          ),
-                                                        ),
-                                                        hintStyle: TextStyle(
-                                                            fontSize: 10.h,
-                                                            color: const Color(
-                                                                0xffA8A8A8)),
-                                                        hintText: "City",
-                                                        prefixStyle:
-                                                            const TextStyle(
-                                                                color: Colors
-                                                                    .grey),
-                                                        border:
-                                                            OutlineInputBorder(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(20),
-                                                        )),
-                                                    keyboardType:
-                                                        TextInputType.name,
-                                                    validator: (value) {
-                                                      if (value!.isEmpty) {
-                                                        return "Please Enter Your City";
-                                                      } else {
-                                                        return null;
-                                                      }
-                                                    },
-                                                    onChanged: (value) {},
-                                                    obscureText: false,
-                                                    style: const TextStyle(
-                                                      fontSize: 12.0,
-                                                      fontWeight:
-                                                          FontWeight.w200,
-                                                    ),
-                                                  ),
-                                                )
-                                              ],
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                  Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: Padding(
-                                      padding: EdgeInsets.symmetric(
-                                          horizontal: 10.w, vertical: 10.h),
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          SizedBox(
-                                            child: Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                RichText(
-                                                  text: TextSpan(
-                                                    style: DefaultTextStyle.of(
-                                                            context)
-                                                        .style,
-                                                    children: <TextSpan>[
-                                                      TextSpan(
-                                                        text: 'State ',
-                                                        style: TextStyle(
-                                                          decoration:
-                                                              TextDecoration
-                                                                  .none,
-                                                          fontFamily: 'Muli',
-                                                          color: const Color(
-                                                              0xff828282),
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                          fontSize: 13.h,
-                                                        ),
-                                                      ),
-                                                      TextSpan(
-                                                        text: '*',
-                                                        style: TextStyle(
-                                                          decoration:
-                                                              TextDecoration
-                                                                  .none,
-                                                          fontFamily: rubm,
-                                                          color: const Color
-                                                                  .fromARGB(
-                                                              255, 231, 27, 27),
-                                                          fontSize: 15.h,
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  height: 5.h,
-                                                ),
-                                                SizedBox(
-                                                  width: MediaQuery.of(context)
-                                                          .size
-                                                          .width *
-                                                      0.19,
-                                                  height: 60.h,
-                                                  child:
-                                                      DropdownButtonFormField<
-                                                          String>(
-                                                    value: selectedState,
-                                                    hint: Text(
-                                                      'Select Your Sate',
-                                                      style: TextStyle(
-                                                          fontSize: 10.h,
-                                                          color: const Color(
-                                                              0xffA8A8A8)),
-                                                    ),
-                                                    onChanged: (salutation) =>
-                                                        setState(() =>
-                                                            selectedState =
-                                                                salutation),
-                                                    autovalidateMode:
-                                                        AutovalidateMode
-                                                            .onUserInteraction,
-                                                    decoration: InputDecoration(
-                                                        enabledBorder: OutlineInputBorder(
-                                                            borderSide:
-                                                                const BorderSide(
-                                                                    color: Color(
-                                                                        0xffE8E8E8)),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        5)),
-                                                        border: OutlineInputBorder(
-                                                            borderSide:
-                                                                const BorderSide(
-                                                                    color: Color(
-                                                                        0xffE8E8E8)),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        5))),
-                                                    borderRadius:
-                                                        const BorderRadius.all(
-                                                            Radius.circular(5)),
-                                                    validator: (value) => value ==
-                                                            null
-                                                        ? 'Please Select Your State'
-                                                        : null,
-                                                    items: indianStatesLists
-                                                        .map<
-                                                            DropdownMenuItem<
-                                                                String>>((String
-                                                            value) {
-                                                      return DropdownMenuItem<
-                                                          String>(
-                                                        value: value,
-                                                        child: Text(value),
-                                                      );
-                                                    }).toList(),
-                                                  ),
-                                                )
-                                              ],
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      RichText(
-                                        text: TextSpan(
-                                          style: DefaultTextStyle.of(context)
-                                              .style,
-                                          children: <TextSpan>[
-                                            TextSpan(
-                                              text: 'Phone Number',
-                                              style: TextStyle(
-                                                decoration: TextDecoration.none,
-                                                fontFamily: 'Muli',
-                                                color: const Color(0xff828282),
-                                                fontWeight: FontWeight.w600,
-                                                fontSize: 13.h,
-                                              ),
-                                            ),
-                                            TextSpan(
-                                              text: '*',
-                                              style: TextStyle(
-                                                decoration: TextDecoration.none,
-                                                fontFamily: rubm,
-                                                color: const Color.fromARGB(
-                                                    255, 231, 27, 27),
-                                                fontSize: 15.h,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 5.h,
-                                      ),
-                                      SizedBox(
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.19,
-                                        height: 60.h,
-                                        child: TextFormField(
-                                          readOnly: false,
-                                          autovalidateMode: AutovalidateMode
-                                              .onUserInteraction,
-                                          controller: Mob_No_Controller,
-                                          decoration: InputDecoration(
-                                              helperText: '',
-                                              helperStyle: const TextStyle(
-                                                  fontSize: 1, height: 0),
-                                              errorStyle: TextStyle(
-                                                  fontSize: 12.h, height: 0),
-                                              fillColor:
-                                                  const Color(0xffffffff),
-                                              contentPadding:
-                                                  const EdgeInsets.all(10.0),
-                                              enabledBorder: OutlineInputBorder(
-                                                borderSide: const BorderSide(
-                                                    color: Color(0xffE8E8E8),
-                                                    width: 1.0),
-                                                borderRadius:
-                                                    BorderRadius.circular(5.0),
-                                              ),
-                                              errorBorder: OutlineInputBorder(
-                                                borderSide: const BorderSide(
-                                                    color: Colors.red,
-                                                    width: 1.0),
-                                                borderRadius:
-                                                    BorderRadius.circular(
-                                                  5.0,
-                                                ),
-                                              ),
-                                              focusedBorder: OutlineInputBorder(
-                                                borderSide: const BorderSide(
-                                                    color: Colors.blue,
-                                                    width: 1.0),
-                                                borderRadius:
-                                                    BorderRadius.circular(
-                                                  5.0,
-                                                ),
-                                              ),
-                                              hintStyle: TextStyle(
-                                                  fontSize: 10.h,
-                                                  color:
-                                                      const Color(0xffA8A8A8)),
-                                              hintText: "Type Phone Number",
-                                              prefixStyle: const TextStyle(
-                                                  color: Colors.grey),
-                                              border: OutlineInputBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(20),
-                                              )),
-                                          keyboardType: TextInputType.name,
-                                          validator: validateMobile,
-                                          onChanged: (value) {},
-                                          obscureText: false,
-                                          style: const TextStyle(
-                                            fontSize: 12.0,
-                                            fontWeight: FontWeight.w200,
-                                          ),
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                  Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      RichText(
-                                        text: TextSpan(
-                                          style: DefaultTextStyle.of(context)
-                                              .style,
-                                          children: <TextSpan>[
-                                            TextSpan(
-                                              text: 'Email',
-                                              style: TextStyle(
-                                                decoration: TextDecoration.none,
-                                                fontFamily: 'Muli',
-                                                color: const Color(0xff828282),
-                                                fontWeight: FontWeight.w600,
-                                                fontSize: 13.h,
-                                              ),
-                                            ),
-                                            TextSpan(
-                                              text: '*',
-                                              style: TextStyle(
-                                                decoration: TextDecoration.none,
-                                                fontFamily: rubm,
-                                                color: const Color.fromARGB(
-                                                    255, 231, 27, 27),
-                                                fontSize: 15.h,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 5.h,
-                                      ),
-                                      SizedBox(
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.19,
-                                        height: 60.h,
-                                        child: TextFormField(
-                                          readOnly: false,
-                                          autovalidateMode: AutovalidateMode
-                                              .onUserInteraction,
-                                          controller: emailController,
-                                          decoration: InputDecoration(
-                                              helperText: '',
-                                              helperStyle: const TextStyle(
-                                                  fontSize: 1, height: 0),
-                                              errorStyle: TextStyle(
-                                                  fontSize: 12.h, height: 0),
-                                              fillColor:
-                                                  const Color(0xffffffff),
-                                              contentPadding:
-                                                  const EdgeInsets.all(10.0),
-                                              enabledBorder: OutlineInputBorder(
-                                                borderSide: const BorderSide(
-                                                    color: Color(0xffE8E8E8),
-                                                    width: 1.0),
-                                                borderRadius:
-                                                    BorderRadius.circular(5.0),
-                                              ),
-                                              errorBorder: OutlineInputBorder(
-                                                borderSide: const BorderSide(
-                                                    color: Colors.red,
-                                                    width: 1.0),
-                                                borderRadius:
-                                                    BorderRadius.circular(
-                                                  5.0,
-                                                ),
-                                              ),
-                                              focusedBorder: OutlineInputBorder(
-                                                borderSide: const BorderSide(
-                                                    color: Colors.blue,
-                                                    width: 1.0),
-                                                borderRadius:
-                                                    BorderRadius.circular(
-                                                  5.0,
-                                                ),
-                                              ),
-                                              hintStyle: TextStyle(
-                                                  fontSize: 10.h,
-                                                  color:
-                                                      const Color(0xffA8A8A8)),
-                                              hintText: "Type Email Id",
-                                              prefixStyle: const TextStyle(
-                                                  color: Colors.grey),
-                                              border: OutlineInputBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(20),
-                                              )),
-                                          keyboardType: TextInputType.name,
-                                          validator: validateEmail,
-                                          onChanged: (value) {},
-                                          obscureText: false,
-                                          style: const TextStyle(
-                                            fontSize: 12.0,
-                                            fontWeight: FontWeight.w200,
-                                          ),
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ],
-                              ),
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.h),
-                                    child: Text(
-                                      "Upload your file",
-                                      style: TextStyle(
-                                          decoration: TextDecoration.none,
-                                          fontFamily: 'Montserrat',
-                                          fontWeight: FontWeight.bold,
-                                          color: const Color(0xFF448CF3),
-                                          fontSize: 16.h),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 15.h,
-                                  ),
-                                  Center(
-                                    child: Padding(
-                                      padding: EdgeInsets.symmetric(
-                                          horizontal: 20.h, vertical: 0.h),
-                                      child: Container(
-                                          width: 308.w,
-                                          height: 100.h,
-                                          decoration: const BoxDecoration(
-                                              color: Colors.white),
-                                          child: uploadPressed == 1
-                                              ? Column(
+                                              InkWell(
+                                                onTap: () =>
+                                                    Navigator.pop(context),
+                                                child: Row(
                                                   mainAxisAlignment:
-                                                      MainAxisAlignment.center,
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.center,
-                                                  children: [
-                                                    SizedBox(
-                                                      height: 10.h,
+                                                      MainAxisAlignment
+                                                          .spaceEvenly,
+                                                  children: const [
+                                                    Icon(
+                                                      Icons.arrow_back_ios,
+                                                      color: Color(0xFF8993B9),
+                                                      size: 10,
                                                     ),
                                                     Text(
-                                                      'Drop a CSV file or',
+                                                      "Back",
                                                       style: TextStyle(
                                                           decoration:
                                                               TextDecoration
                                                                   .none,
-                                                          fontFamily: 'Muli',
+                                                          fontFamily:
+                                                              'Montserrat',
+                                                          letterSpacing: 0.52,
                                                           fontWeight:
                                                               FontWeight.bold,
-                                                          color: const Color(
-                                                              0xFF303030),
-                                                          fontSize: 13.h),
+                                                          color:
+                                                              Color(0xFF8993B9),
+                                                          fontSize: 12),
+                                                    )
+                                                  ],
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                        // SizedBox(
+                                        //   height: 10 ,
+                                        // ),
+                                        SizedBox(
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              RichText(
+                                                text: TextSpan(
+                                                  style: DefaultTextStyle.of(
+                                                          context)
+                                                      .style,
+                                                  children: const <TextSpan>[
+                                                    TextSpan(
+                                                      text: 'School Name ',
+                                                      style: TextStyle(
+                                                        decoration:
+                                                            TextDecoration.none,
+                                                        fontFamily: 'Muli',
+                                                        letterSpacing: 0.36,
+                                                        color:
+                                                            Color(0xff828282),
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                        fontSize: 13,
+                                                      ),
                                                     ),
-                                                    SizedBox(
-                                                      height: 15.h,
-                                                    ),
-                                                    FittedBox(
-                                                      fit: BoxFit.contain,
-                                                      child: ElevatedButton(
-                                                        style: ElevatedButton
-                                                            .styleFrom(
-                                                                shape:
-                                                                    RoundedRectangleBorder(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              15.0),
-                                                                ),
-                                                                fixedSize: Size(
-                                                                    40.w, 27.h),
-                                                                backgroundColor:
-                                                                    const Color(
-                                                                        0xFFEC8D3C)),
-                                                        onPressed: () {
-                                                          if (_formKey
-                                                              .currentState!
-                                                              .validate()) {
-                                                            uploadFile();
-                                                          }
-                                                        },
-                                                        child: Row(
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .center,
-                                                          crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .center,
-                                                          children: [
-                                                            Image.asset(
-                                                              impo,
-                                                              width: 12.w,
-                                                              height: 12.h,
-                                                            ),
-                                                            Expanded(
-                                                              child: Text(
-                                                                'Import',
-                                                                style: TextStyle(
-                                                                    fontFamily:
-                                                                        rubm,
-                                                                    fontSize:
-                                                                        10.h),
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
+                                                    TextSpan(
+                                                      text: '*',
+                                                      style: TextStyle(
+                                                        decoration:
+                                                            TextDecoration.none,
+                                                        fontFamily: rubm,
+                                                        color: Color.fromARGB(
+                                                            255, 231, 27, 27),
+                                                        fontSize: 15,
                                                       ),
                                                     ),
                                                   ],
-                                                )
-                                              : uploadPressed == 2
-                                                  ? Column(
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .center,
-                                                      children: [
-                                                        Text(
-                                                          fileName,
-                                                          style: TextStyle(
-                                                              color: const Color(
-                                                                  0xff303030),
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w600,
-                                                              fontSize: 15.h),
-                                                        ),
-                                                        SizedBox(
-                                                          height: 5.w,
-                                                        ),
-                                                        Row(
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .center,
-                                                          children: [
-                                                            Image.asset(
-                                                              loading,
-                                                              width: 35.w,
-                                                              height: 35.h,
-                                                            ),
-                                                            SizedBox(
-                                                              width: 4.w,
-                                                            ),
-                                                            Text(
-                                                              "Processing ... Please Wait !!!",
-                                                              style: TextStyle(
-                                                                  color: const Color(
-                                                                      0xff303030),
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w600,
-                                                                  fontSize:
-                                                                      13.h),
-                                                            )
-                                                          ],
-                                                        ),
-                                                      ],
-                                                    )
-                                                  : uploadPressed == 3
-                                                      ? Column(
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .center,
-                                                          children: [
-                                                            Text(
-                                                              " Your report is ready!",
-                                                              style: TextStyle(
-                                                                  color: const Color(
-                                                                      0xff303030),
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w600,
-                                                                  fontSize:
-                                                                      15.h),
-                                                            ),
-                                                            SizedBox(
-                                                              height: 5.w,
-                                                            ),
-                                                            Row(
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .center,
-                                                              children: [
-                                                                Image.asset(
-                                                                  okIcon,
-                                                                  width: 39.w,
-                                                                  height: 39.h,
-                                                                ),
-                                                                Text(
-                                                                  "Please click the download button to continue.",
-                                                                  style: TextStyle(
-                                                                      color: const Color(
-                                                                          0xff818181),
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w600,
-                                                                      fontSize:
-                                                                          10.h),
-                                                                )
-                                                              ],
-                                                            ),
-                                                          ],
-                                                        )
-                                                      : null),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 20.h,
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.only(bottom: 10.h),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        uploadPressed == 2
-                                            ? FittedBox(
-                                                fit: BoxFit.contain,
-                                                child: ElevatedButton(
-                                                  style: ElevatedButton.styleFrom(
-                                                      shape:
-                                                          const BeveledRectangleBorder(),
-                                                      fixedSize:
-                                                          Size(38.w, 38.h),
-                                                      backgroundColor:
+                                                ),
+                                              ),
+                                              const SizedBox(
+                                                height: 5,
+                                              ),
+                                              SizedBox(
+                                                width: MediaQuery.of(context)
+                                                    .size
+                                                    .width,
+                                                height: 50,
+                                                child: TextFormField(
+                                                  readOnly: false,
+                                                  autovalidateMode:
+                                                      AutovalidateMode
+                                                          .onUserInteraction,
+                                                  controller:
+                                                      schoolNameController,
+                                                  decoration: InputDecoration(
+                                                      filled: true,
+                                                      helperText: '',
+                                                      helperStyle:
+                                                          const TextStyle(
+                                                              fontSize: 1,
+                                                              height: 0),
+                                                      errorStyle:
+                                                          const TextStyle(
+                                                              fontSize: 12,
+                                                              height: 0),
+                                                      fillColor:
                                                           const Color(
-                                                              0xFF1D1D1D)),
-                                                  onPressed: () {},
-                                                  child: Text(
-                                                    'Clear',
-                                                    style: TextStyle(
-                                                        fontFamily: rubm,
-                                                        fontSize: 10.h),
+                                                              0xffffffff),
+                                                      contentPadding:
+                                                          const EdgeInsets.all(
+                                                              10.0),
+                                                      enabledBorder:
+                                                          OutlineInputBorder(
+                                                        borderSide:
+                                                            const BorderSide(
+                                                                color: Color(
+                                                                    0xffE8E8E8),
+                                                                width: 1.0),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(5.0),
+                                                      ),
+                                                      errorBorder:
+                                                          OutlineInputBorder(
+                                                        borderSide:
+                                                            const BorderSide(
+                                                                color:
+                                                                    Colors.red,
+                                                                width: 1.0),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(
+                                                          5.0,
+                                                        ),
+                                                      ),
+                                                      focusedBorder:
+                                                          OutlineInputBorder(
+                                                        borderSide:
+                                                            const BorderSide(
+                                                                color:
+                                                                    Colors.blue,
+                                                                width: 1.0),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(
+                                                          5.0,
+                                                        ),
+                                                      ),
+                                                      hintStyle:
+                                                          const TextStyle(
+                                                              fontSize: 10,
+                                                              color: Color(
+                                                                  0xffA8A8A8)),
+                                                      hintText:
+                                                          "Your School Name",
+                                                      prefixStyle:
+                                                          const TextStyle(
+                                                              color:
+                                                                  Colors.grey),
+                                                      border:
+                                                          OutlineInputBorder(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(20),
+                                                      )),
+                                                  keyboardType:
+                                                      TextInputType.name,
+                                                  validator: (value) {
+                                                    if (value!.isEmpty) {
+                                                      return " Please enter Your School Name ";
+                                                    } else {
+                                                      return null;
+                                                    }
+                                                  },
+                                                  onChanged: (value) {},
+                                                  obscureText: false,
+                                                  style: const TextStyle(
+                                                    fontSize: 12.0,
+                                                    fontWeight: FontWeight.w200,
                                                   ),
                                                 ),
                                               )
-                                            : Container(),
-                                        SizedBox(
-                                          width: 5.w,
-                                        ),
-                                        FittedBox(
-                                          fit: BoxFit.contain,
-                                          child: ElevatedButton(
-                                            style: ElevatedButton.styleFrom(
-                                                shape:
-                                                    const BeveledRectangleBorder(),
-                                                fixedSize: Size(50.w, 38.h),
-                                                backgroundColor:
-                                                    uploadPressed == 3
-                                                        ? const Color(
-                                                            0xFF1F8A70)
-                                                        : const Color(
-                                                            0xffBFBFBF)),
-                                            onPressed: uploadPressed == 3
-                                                ? () {
-                                                    submit();
-                                                  }
-                                                : null,
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.spaceAround,
-                                              children: [
-                                                Icon(
-                                                  Icons.download_sharp,
-                                                  color: Colors.white,
-                                                  size: 20.h,
-                                                ),
-                                                SizedBox(
-                                                  width: 10.h,
-                                                ),
-                                                Expanded(
-                                                  child: Text(
-                                                    'Generate Report',
-                                                    style: TextStyle(
-                                                        fontFamily: rubm,
-                                                        fontSize: 10.h),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
+                                            ],
                                           ),
                                         ),
                                       ],
                                     ),
-                                  )
-                                ],
-                              )
-                            ]),
-                          ),
+                                  ),
+                                ),
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 20, vertical: 10),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        SizedBox(
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              RichText(
+                                                text: TextSpan(
+                                                  style: DefaultTextStyle.of(
+                                                          context)
+                                                      .style,
+                                                  children: const <TextSpan>[
+                                                    TextSpan(
+                                                      text: 'Address ',
+                                                      style: TextStyle(
+                                                        decoration:
+                                                            TextDecoration.none,
+                                                        fontFamily: 'Muli',
+                                                        color:
+                                                            Color(0xff828282),
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                        fontSize: 13,
+                                                      ),
+                                                    ),
+                                                    TextSpan(
+                                                      text: '*',
+                                                      style: TextStyle(
+                                                        decoration:
+                                                            TextDecoration.none,
+                                                        fontFamily: rubm,
+                                                        color: Color.fromARGB(
+                                                            255, 231, 27, 27),
+                                                        fontSize: 15,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              const SizedBox(
+                                                height: 5,
+                                              ),
+                                              SizedBox(
+                                                width: MediaQuery.of(context)
+                                                    .size
+                                                    .width,
+                                                height: 50,
+                                                child: TextFormField(
+                                                  readOnly: false,
+                                                  autovalidateMode:
+                                                      AutovalidateMode
+                                                          .onUserInteraction,
+                                                  controller: addressController,
+                                                  decoration: InputDecoration(
+                                                      helperText: '',
+                                                      filled: true,
+                                                      helperStyle:
+                                                          const TextStyle(
+                                                              fontSize: 1,
+                                                              height: 0),
+                                                      errorStyle:
+                                                          const TextStyle(
+                                                              fontSize: 12,
+                                                              height: 0),
+                                                      fillColor: const Color(
+                                                          0xffffffff),
+                                                      contentPadding:
+                                                          const EdgeInsets.all(
+                                                              10.0),
+                                                      enabledBorder:
+                                                          OutlineInputBorder(
+                                                        borderSide:
+                                                            const BorderSide(
+                                                                color: Color(
+                                                                    0xffE8E8E8),
+                                                                width: 1.0),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(5.0),
+                                                      ),
+                                                      errorBorder:
+                                                          OutlineInputBorder(
+                                                        borderSide:
+                                                            const BorderSide(
+                                                                color:
+                                                                    Colors.red,
+                                                                width: 1.0),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(
+                                                          5.0,
+                                                        ),
+                                                      ),
+                                                      focusedBorder:
+                                                          OutlineInputBorder(
+                                                        borderSide:
+                                                            const BorderSide(
+                                                                color:
+                                                                    Colors.blue,
+                                                                width: 1.0),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(
+                                                          5.0,
+                                                        ),
+                                                      ),
+                                                      hintStyle:
+                                                          const TextStyle(
+                                                              fontSize: 10,
+                                                              color: Color(
+                                                                  0xffA8A8A8)),
+                                                      hintText:
+                                                          "School Address",
+                                                      prefixStyle:
+                                                          const TextStyle(
+                                                              color:
+                                                                  Colors.grey),
+                                                      border:
+                                                          OutlineInputBorder(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(20),
+                                                      )),
+                                                  keyboardType:
+                                                      TextInputType.name,
+                                                  validator: (value) {
+                                                    if (value!.isEmpty) {
+                                                      return "Please enter Your Address";
+                                                    } else {
+                                                      return null;
+                                                    }
+                                                  },
+                                                  onChanged: (value) {},
+                                                  obscureText: false,
+                                                  style: const TextStyle(
+                                                    fontSize: 12.0,
+                                                    fontWeight: FontWeight.w200,
+                                                  ),
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 13),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Align(
+                                        alignment: Alignment.centerLeft,
+                                        child: Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 10, vertical: 10),
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              SizedBox(
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    RichText(
+                                                      text: TextSpan(
+                                                        style:
+                                                            DefaultTextStyle.of(
+                                                                    context)
+                                                                .style,
+                                                        children: const <
+                                                            TextSpan>[
+                                                          TextSpan(
+                                                            text:
+                                                                'Enter Your City Name',
+                                                            style: TextStyle(
+                                                              decoration:
+                                                                  TextDecoration
+                                                                      .none,
+                                                              fontFamily:
+                                                                  'Muli',
+                                                              color: Color(
+                                                                  0xff828282),
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600,
+                                                              fontSize: 13,
+                                                            ),
+                                                          ),
+                                                          TextSpan(
+                                                            text: '*',
+                                                            style: TextStyle(
+                                                              decoration:
+                                                                  TextDecoration
+                                                                      .none,
+                                                              fontFamily: rubm,
+                                                              color: Color
+                                                                  .fromARGB(
+                                                                      255,
+                                                                      231,
+                                                                      27,
+                                                                      27),
+                                                              fontSize: 15,
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                    const SizedBox(
+                                                      height: 5,
+                                                    ),
+                                                    SizedBox(
+                                                      width: 335,
+                                                      height: 50,
+                                                      child: TextFormField(
+                                                        readOnly: false,
+                                                        autovalidateMode:
+                                                            AutovalidateMode
+                                                                .onUserInteraction,
+                                                        controller:
+                                                            cityController,
+                                                        decoration:
+                                                            InputDecoration(
+                                                                helperText: '',
+                                                                filled: true,
+                                                                helperStyle:
+                                                                    const TextStyle(
+                                                                        fontSize:
+                                                                            1,
+                                                                        height:
+                                                                            0),
+                                                                errorStyle:
+                                                                    const TextStyle(
+                                                                        fontSize:
+                                                                            12,
+                                                                        height:
+                                                                            0),
+                                                                fillColor:
+                                                                    const Color(
+                                                                        0xffffffff),
+                                                                contentPadding:
+                                                                    const EdgeInsets
+                                                                            .all(
+                                                                        10.0),
+                                                                enabledBorder:
+                                                                    OutlineInputBorder(
+                                                                  borderSide: const BorderSide(
+                                                                      color: Color(
+                                                                          0xffE8E8E8),
+                                                                      width:
+                                                                          1.0),
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              5.0),
+                                                                ),
+                                                                errorBorder:
+                                                                    OutlineInputBorder(
+                                                                  borderSide: const BorderSide(
+                                                                      color: Colors
+                                                                          .red,
+                                                                      width:
+                                                                          1.0),
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                    5.0,
+                                                                  ),
+                                                                ),
+                                                                focusedBorder:
+                                                                    OutlineInputBorder(
+                                                                  borderSide: const BorderSide(
+                                                                      color: Colors
+                                                                          .blue,
+                                                                      width:
+                                                                          1.0),
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                    5.0,
+                                                                  ),
+                                                                ),
+                                                                hintStyle: const TextStyle(
+                                                                    fontSize:
+                                                                        10,
+                                                                    color:
+                                                                        Color(
+                                                                            0xffA8A8A8)),
+                                                                hintText:
+                                                                    "City",
+                                                                prefixStyle:
+                                                                    const TextStyle(
+                                                                        color: Colors
+                                                                            .grey),
+                                                                border:
+                                                                    OutlineInputBorder(
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              20),
+                                                                )),
+                                                        keyboardType:
+                                                            TextInputType.name,
+                                                        validator: (value) {
+                                                          if (value!.isEmpty) {
+                                                            return "Please Enter Your City";
+                                                          } else {
+                                                            return null;
+                                                          }
+                                                        },
+                                                        onChanged: (value) {},
+                                                        obscureText: false,
+                                                        style: const TextStyle(
+                                                          fontSize: 12.0,
+                                                          fontWeight:
+                                                              FontWeight.w200,
+                                                        ),
+                                                      ),
+                                                    )
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                      Align(
+                                        alignment: Alignment.centerLeft,
+                                        child: Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 10, vertical: 10),
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              SizedBox(
+                                                  child: Column(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .start,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
+                                                      children: [
+                                                    RichText(
+                                                      text: TextSpan(
+                                                        style:
+                                                            DefaultTextStyle.of(
+                                                                    context)
+                                                                .style,
+                                                        children: const <
+                                                            TextSpan>[
+                                                          TextSpan(
+                                                            text: 'State ',
+                                                            style: TextStyle(
+                                                              decoration:
+                                                                  TextDecoration
+                                                                      .none,
+                                                              fontFamily:
+                                                                  'Muli',
+                                                              color: Color(
+                                                                  0xff828282),
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600,
+                                                              fontSize: 13,
+                                                            ),
+                                                          ),
+                                                          TextSpan(
+                                                            text: '*',
+                                                            style: TextStyle(
+                                                              decoration:
+                                                                  TextDecoration
+                                                                      .none,
+                                                              fontFamily: rubm,
+                                                              color: Color
+                                                                  .fromARGB(
+                                                                      255,
+                                                                      231,
+                                                                      27,
+                                                                      27),
+                                                              fontSize: 15,
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                    const SizedBox(
+                                                      height: 5,
+                                                    ),
+                                                    SizedBox(
+                                                      width: 335,
+                                                      height: 50,
+                                                      child:
+                                                          DropdownButtonFormField<
+                                                              String>(
+                                                        value: selectedState,
+                                                        style: const TextStyle(
+                                                          fontSize: 10,
+                                                        ),
+                                                        hint: const Text(
+                                                          'Select Your State',
+                                                          style: TextStyle(
+                                                              fontSize: 10,
+                                                              color: Color(
+                                                                  0xffA8A8A8)),
+                                                        ),
+                                                        onChanged: (value) =>
+                                                            setState(() {
+                                                          selectedState = value;
+                                                        }),
+                                                        autovalidateMode:
+                                                            AutovalidateMode
+                                                                .onUserInteraction,
+                                                        decoration:
+                                                            InputDecoration(
+                                                                helperText: '',
+                                                                helperStyle:
+                                                                    const TextStyle(
+                                                                        fontSize:
+                                                                            1,
+                                                                        height:
+                                                                            0),
+                                                                errorStyle: const TextStyle(
+                                                                    fontSize:
+                                                                        12,
+                                                                    height: 0),
+                                                                filled: true,
+                                                                fillColor:
+                                                                    const Color(
+                                                                        0xffffffff),
+                                                                contentPadding:
+                                                                    const EdgeInsets
+                                                                            .all(
+                                                                        10.0),
+                                                                enabledBorder:
+                                                                    OutlineInputBorder(
+                                                                  borderSide: const BorderSide(
+                                                                      color: Color(
+                                                                          0xffE8E8E8),
+                                                                      width:
+                                                                          1.0),
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              5.0),
+                                                                ),
+                                                                errorBorder:
+                                                                    OutlineInputBorder(
+                                                                  borderSide: const BorderSide(
+                                                                      color: Colors
+                                                                          .red,
+                                                                      width:
+                                                                          1.0),
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                    5.0,
+                                                                  ),
+                                                                ),
+                                                                focusedBorder:
+                                                                    OutlineInputBorder(
+                                                                  borderSide: const BorderSide(
+                                                                      color: Colors
+                                                                          .blue,
+                                                                      width:
+                                                                          1.0),
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                    5.0,
+                                                                  ),
+                                                                ),
+                                                                hintStyle:
+                                                                    const TextStyle(
+                                                                        fontSize:
+                                                                            10,
+                                                                        color:
+                                                                            Color(
+                                                                                0xffA8A8A8)),
+                                                                hintText:
+                                                                    "Select your State",
+                                                                prefixStyle:
+                                                                    const TextStyle(
+                                                                        color: Colors
+                                                                            .grey),
+                                                                border:
+                                                                    OutlineInputBorder(
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              20),
+                                                                )),
+                                                        borderRadius:
+                                                            const BorderRadius
+                                                                    .all(
+                                                                Radius.circular(
+                                                                    5)),
+                                                        // validator: (value) => value != null
+                                                        //     ? null
+                                                        //     : "Please Select Your State",
+
+                                                        validator: (value) {
+                                                          if (value == null) {
+                                                            return "Please Select Your State";
+                                                          } else {
+                                                            return null;
+                                                          }
+                                                        },
+                                                        items: indianStatesLists.map<
+                                                            DropdownMenuItem<
+                                                                String>>((String
+                                                            value) {
+                                                          return DropdownMenuItem<
+                                                              String>(
+                                                            value: value,
+                                                            child: Text(value),
+                                                          );
+                                                        }).toList(),
+                                                      ),
+                                                    )
+                                                  ]))
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        RichText(
+                                          text: TextSpan(
+                                            style: DefaultTextStyle.of(context)
+                                                .style,
+                                            children: const <TextSpan>[
+                                              TextSpan(
+                                                text: 'Phone Number',
+                                                style: TextStyle(
+                                                  decoration:
+                                                      TextDecoration.none,
+                                                  fontFamily: 'Muli',
+                                                  color: Color(0xff828282),
+                                                  fontWeight: FontWeight.w600,
+                                                  fontSize: 13,
+                                                ),
+                                              ),
+                                              TextSpan(
+                                                text: '*',
+                                                style: TextStyle(
+                                                  decoration:
+                                                      TextDecoration.none,
+                                                  fontFamily: rubm,
+                                                  color: Color.fromARGB(
+                                                      255, 231, 27, 27),
+                                                  fontSize: 15,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        const SizedBox(
+                                          height: 5,
+                                        ),
+                                        SizedBox(
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.19,
+                                          height: 60,
+                                          child: TextFormField(
+                                            readOnly: false,
+                                            autovalidateMode: AutovalidateMode
+                                                .onUserInteraction,
+                                            controller: Mob_No_Controller,
+                                            decoration: InputDecoration(
+                                                helperText: '',
+                                                helperStyle: const TextStyle(
+                                                    fontSize: 1, height: 0),
+                                                errorStyle: const TextStyle(
+                                                    fontSize: 12, height: 0),
+                                                fillColor:
+                                                    const Color(0xffffffff),
+                                                contentPadding:
+                                                    const EdgeInsets.all(10.0),
+                                                enabledBorder:
+                                                    OutlineInputBorder(
+                                                  borderSide: const BorderSide(
+                                                      color: Color(0xffE8E8E8),
+                                                      width: 1.0),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          5.0),
+                                                ),
+                                                errorBorder: OutlineInputBorder(
+                                                  borderSide: const BorderSide(
+                                                      color: Colors.red,
+                                                      width: 1.0),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                    5.0,
+                                                  ),
+                                                ),
+                                                focusedBorder:
+                                                    OutlineInputBorder(
+                                                  borderSide: const BorderSide(
+                                                      color: Colors.blue,
+                                                      width: 1.0),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                    5.0,
+                                                  ),
+                                                ),
+                                                hintStyle: const TextStyle(
+                                                    fontSize: 10,
+                                                    color: Color(0xffA8A8A8)),
+                                                hintText: "Type Phone Number",
+                                                prefixStyle: const TextStyle(
+                                                    color: Colors.grey),
+                                                border: OutlineInputBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(20),
+                                                )),
+                                            keyboardType: TextInputType.name,
+                                            validator: validateMobile,
+                                            onChanged: (value) {},
+                                            obscureText: false,
+                                            style: const TextStyle(
+                                              fontSize: 12.0,
+                                              fontWeight: FontWeight.w200,
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                    Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        RichText(
+                                          text: TextSpan(
+                                            style: DefaultTextStyle.of(context)
+                                                .style,
+                                            children: const <TextSpan>[
+                                              TextSpan(
+                                                text: 'Email',
+                                                style: TextStyle(
+                                                  decoration:
+                                                      TextDecoration.none,
+                                                  fontFamily: 'Muli',
+                                                  color: Color(0xff828282),
+                                                  fontWeight: FontWeight.w600,
+                                                  fontSize: 13,
+                                                ),
+                                              ),
+                                              TextSpan(
+                                                text: '*',
+                                                style: TextStyle(
+                                                  decoration:
+                                                      TextDecoration.none,
+                                                  fontFamily: rubm,
+                                                  color: Color.fromARGB(
+                                                      255, 231, 27, 27),
+                                                  fontSize: 15,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        const SizedBox(
+                                          height: 5,
+                                        ),
+                                        SizedBox(
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.19,
+                                          height: 60,
+                                          child: TextFormField(
+                                            readOnly: false,
+                                            autovalidateMode: AutovalidateMode
+                                                .onUserInteraction,
+                                            controller: emailController,
+                                            decoration: InputDecoration(
+                                                helperText: '',
+                                                helperStyle: const TextStyle(
+                                                    fontSize: 1, height: 0),
+                                                errorStyle: const TextStyle(
+                                                    fontSize: 12, height: 0),
+                                                fillColor:
+                                                    const Color(0xffffffff),
+                                                contentPadding:
+                                                    const EdgeInsets.all(10.0),
+                                                enabledBorder:
+                                                    OutlineInputBorder(
+                                                  borderSide: const BorderSide(
+                                                      color: Color(0xffE8E8E8),
+                                                      width: 1.0),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          5.0),
+                                                ),
+                                                errorBorder: OutlineInputBorder(
+                                                  borderSide: const BorderSide(
+                                                      color: Colors.red,
+                                                      width: 1.0),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                    5.0,
+                                                  ),
+                                                ),
+                                                focusedBorder:
+                                                    OutlineInputBorder(
+                                                  borderSide: const BorderSide(
+                                                      color: Colors.blue,
+                                                      width: 1.0),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                    5.0,
+                                                  ),
+                                                ),
+                                                hintStyle: const TextStyle(
+                                                    fontSize: 10,
+                                                    color: Color(0xffA8A8A8)),
+                                                hintText: "Type Email Id",
+                                                prefixStyle: const TextStyle(
+                                                    color: Colors.grey),
+                                                border: OutlineInputBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(20),
+                                                )),
+                                            keyboardType: TextInputType.name,
+                                            validator: validateEmail,
+                                            onChanged: (value) {},
+                                            obscureText: false,
+                                            style: const TextStyle(
+                                              fontSize: 12.0,
+                                              fontWeight: FontWeight.w200,
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Padding(
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: 20, vertical: 10),
+                                      child: Text(
+                                        "Upload your file",
+                                        style: TextStyle(
+                                            decoration: TextDecoration.none,
+                                            fontFamily: 'Montserrat',
+                                            fontWeight: FontWeight.bold,
+                                            color: Color(0xFF448CF3),
+                                            fontSize: 16),
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      height: 15,
+                                    ),
+                                    Center(
+                                      child: Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 20, vertical: 0),
+                                        child: Container(
+                                            width: 308,
+                                            height: 100,
+                                            decoration: const BoxDecoration(
+                                                color: Colors.white),
+                                            child: uploadPressed == 1
+                                                ? Column(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      const SizedBox(
+                                                        height: 10,
+                                                      ),
+                                                      const Text(
+                                                        'Drop a CSV file or',
+                                                        style: TextStyle(
+                                                            decoration:
+                                                                TextDecoration
+                                                                    .none,
+                                                            fontFamily: 'Muli',
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            color: Color(
+                                                                0xFF303030),
+                                                            fontSize: 13),
+                                                      ),
+                                                      const SizedBox(
+                                                        height: 15,
+                                                      ),
+                                                      FittedBox(
+                                                        fit: BoxFit.contain,
+                                                        child: ElevatedButton(
+                                                          style: ElevatedButton
+                                                              .styleFrom(
+                                                                  shape:
+                                                                      RoundedRectangleBorder(
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            15.0),
+                                                                  ),
+                                                                  fixedSize:
+                                                                      const Size(
+                                                                          40,
+                                                                          27),
+                                                                  backgroundColor:
+                                                                      const Color(
+                                                                          0xFFEC8D3C)),
+                                                          onPressed: () {
+                                                            if (_formKey
+                                                                .currentState!
+                                                                .validate()) {
+                                                              uploadFile();
+                                                            }
+                                                          },
+                                                          child: Row(
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .center,
+                                                            crossAxisAlignment:
+                                                                CrossAxisAlignment
+                                                                    .center,
+                                                            children: [
+                                                              Image.asset(
+                                                                impo,
+                                                                width: 12,
+                                                                height: 12,
+                                                              ),
+                                                              const Expanded(
+                                                                child: Text(
+                                                                  'Import',
+                                                                  style: TextStyle(
+                                                                      fontFamily:
+                                                                          rubm,
+                                                                      fontSize:
+                                                                          10),
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  )
+                                                : uploadPressed == 2
+                                                    ? Column(
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
+                                                        children: [
+                                                          Text(
+                                                            fileName,
+                                                            style: const TextStyle(
+                                                                color: Color(
+                                                                    0xff303030),
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                                fontSize: 15),
+                                                          ),
+                                                          const SizedBox(
+                                                            height: 5,
+                                                          ),
+                                                          Row(
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .center,
+                                                            children: [
+                                                              Image.asset(
+                                                                loading,
+                                                                width: 35,
+                                                                height: 35,
+                                                              ),
+                                                              const SizedBox(
+                                                                width: 4,
+                                                              ),
+                                                              const Text(
+                                                                "Processing ... Please Wait !!!",
+                                                                style: TextStyle(
+                                                                    color: Color(
+                                                                        0xff303030),
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w600,
+                                                                    fontSize:
+                                                                        13),
+                                                              )
+                                                            ],
+                                                          ),
+                                                        ],
+                                                      )
+                                                    : uploadPressed == 3
+                                                        ? Column(
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .center,
+                                                            children: [
+                                                              const Text(
+                                                                " Your report is ready!",
+                                                                style: TextStyle(
+                                                                    color: Color(
+                                                                        0xff303030),
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w600,
+                                                                    fontSize:
+                                                                        15),
+                                                              ),
+                                                              const SizedBox(
+                                                                height: 5,
+                                                              ),
+                                                              Row(
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .center,
+                                                                children: [
+                                                                  Image.asset(
+                                                                    okIcon,
+                                                                    width: 39,
+                                                                    height: 39,
+                                                                  ),
+                                                                  const Text(
+                                                                    "Please click the download button to continue.",
+                                                                    style: TextStyle(
+                                                                        color: Color(
+                                                                            0xff818181),
+                                                                        fontWeight:
+                                                                            FontWeight
+                                                                                .w600,
+                                                                        fontSize:
+                                                                            10),
+                                                                  )
+                                                                ],
+                                                              ),
+                                                            ],
+                                                          )
+                                                        : null),
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      height: 20,
+                                    ),
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.only(bottom: 10),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          uploadPressed == 2
+                                              ? FittedBox(
+                                                  fit: BoxFit.contain,
+                                                  child: ElevatedButton(
+                                                    style: ElevatedButton.styleFrom(
+                                                        shape:
+                                                            const BeveledRectangleBorder(),
+                                                        fixedSize:
+                                                            const Size(38, 38),
+                                                        backgroundColor:
+                                                            const Color(
+                                                                0xFF1D1D1D)),
+                                                    onPressed: () {},
+                                                    child: const Text(
+                                                      'Clear',
+                                                      style: TextStyle(
+                                                          fontFamily: rubm,
+                                                          fontSize: 10),
+                                                    ),
+                                                  ),
+                                                )
+                                              : Container(),
+                                          const SizedBox(
+                                            width: 5,
+                                          ),
+                                          FittedBox(
+                                            fit: BoxFit.contain,
+                                            child: ElevatedButton(
+                                              style: ElevatedButton.styleFrom(
+                                                  shape:
+                                                      const BeveledRectangleBorder(),
+                                                  fixedSize: const Size(50, 38),
+                                                  backgroundColor:
+                                                      uploadPressed == 3
+                                                          ? const Color(
+                                                              0xFF1F8A70)
+                                                          : const Color(
+                                                              0xffBFBFBF)),
+                                              onPressed: uploadPressed == 3
+                                                  ? () {
+                                                      submit();
+                                                    }
+                                                  : null,
+                                              child: Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceAround,
+                                                children: const [
+                                                  Icon(
+                                                    Icons.download_sharp,
+                                                    color: Colors.white,
+                                                    size: 20,
+                                                  ),
+                                                  SizedBox(
+                                                    width: 10,
+                                                  ),
+                                                  Expanded(
+                                                    child: Text(
+                                                      'Generate Report',
+                                                      style: TextStyle(
+                                                          fontFamily: rubm,
+                                                          fontSize: 10),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                )
+                              ]),
+                            ),
+                    ),
                   ),
-                  SizedBox(height: 20.h),
+                  const SizedBox(height: 20),
                   //
                   //
                   //
 
                   GlowingText(text: 'We\'d Love To Hear From You'),
-                  SizedBox(height: 7.h),
-                  Text(
+                  const SizedBox(height: 7),
+                  const Text(
                     'If you would like to know more about our products and services, our team would be happy to speak to you.',
                     style: TextStyle(
                       decoration: TextDecoration.none,
                       fontFamily: rubm,
                       letterSpacing: 0.21,
-                      color: const Color(0xff6A6A6A),
+                      color: Color(0xff6A6A6A),
                       fontStyle: FontStyle.italic,
                       fontWeight: FontWeight.w400,
-                      fontSize: 15.h,
+                      fontSize: 15,
                     ),
                   ),
-                  SizedBox(height: 5.h),
+                  const SizedBox(height: 5),
                   RichText(
                     text: TextSpan(
                       style: DefaultTextStyle.of(context).style,
-                      children: <TextSpan>[
+                      children: const <TextSpan>[
                         TextSpan(
                           text: 'Reach us at ',
                           style: TextStyle(
                             decoration: TextDecoration.none,
                             fontFamily: rubr,
                             letterSpacing: 0.06,
-                            color: const Color(0xff272727),
+                            color: Color(0xff272727),
                             fontWeight: FontWeight.w100,
-                            fontSize: 15.h,
+                            fontSize: 15,
                           ),
                         ),
                         TextSpan(
@@ -1470,8 +1612,8 @@ class _WebUploadPgState extends State<WebUploadPg> {
                             letterSpacing: 0.06,
                             fontFamily: rubm,
                             fontWeight: FontWeight.w600,
-                            color: const Color(0xff272727),
-                            fontSize: 15.h,
+                            color: Color(0xff272727),
+                            fontSize: 15,
                           ),
                         ),
                         TextSpan(
@@ -1480,9 +1622,9 @@ class _WebUploadPgState extends State<WebUploadPg> {
                             decoration: TextDecoration.none,
                             fontFamily: rubr,
                             letterSpacing: 0.06,
-                            color: const Color(0xff272727),
+                            color: Color(0xff272727),
                             fontWeight: FontWeight.w100,
-                            fontSize: 15.h,
+                            fontSize: 15,
                           ),
                         ),
                         TextSpan(
@@ -1492,37 +1634,37 @@ class _WebUploadPgState extends State<WebUploadPg> {
                             fontFamily: rubm,
                             fontWeight: FontWeight.w600,
                             letterSpacing: 0.06,
-                            color: const Color(0xff272727),
-                            fontSize: 15.h,
+                            color: Color(0xff272727),
+                            fontSize: 15,
                           ),
                         ),
                       ],
                     ),
                   ),
-                  SizedBox(height: 10.h),
-                  Divider(
-                    indent: 20.w,
-                    endIndent: 20.w,
-                    color: const Color(0xffC9C9C9),
+                  const SizedBox(height: 10),
+                  const Divider(
+                    indent: 20,
+                    endIndent: 20,
+                    color: Color(0xffC9C9C9),
                     thickness: 0.5,
                   ),
                   // SizedBox(
-                  //   height: 100.h,
+                  //   height: 100 ,
                   // ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Padding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 10.w,
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 10,
                         ),
                         child: Column(
-                          children: [
+                          children: const [
                             Image(
-                              image: const AssetImage(logo),
-                              width: 40.w,
-                              height: 40.h,
+                              image: AssetImage(logo),
+                              width: 40,
+                              height: 40,
                             ),
                             Text(
                               'www.neverskip.com',
@@ -1531,32 +1673,32 @@ class _WebUploadPgState extends State<WebUploadPg> {
                                   fontFamily: rubr,
                                   letterSpacing: 0.06,
                                   fontWeight: FontWeight.bold,
-                                  color: const Color(0xFF00425A),
-                                  fontSize: 11.h),
+                                  color: Color(0xFF00425A),
+                                  fontSize: 11),
                             ),
                           ],
                         ),
                       ),
-                      SizedBox(
-                        width: 10.w,
+                      const SizedBox(
+                        width: 10,
                       ),
                       Padding(
-                        padding: EdgeInsets.only(top: 5.h),
+                        padding: const EdgeInsets.only(top: 5),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
+                          children: const [
                             Text(
                               'Jarulss Software Solutions Pvt Ltd',
                               style: TextStyle(
                                   decoration: TextDecoration.none,
                                   fontFamily: 'Montserrat',
                                   fontWeight: FontWeight.bold,
-                                  color: const Color(0xFF333333),
-                                  fontSize: 13.h),
+                                  color: Color(0xFF333333),
+                                  fontSize: 13),
                             ),
                             SizedBox(
-                              height: 5.h,
+                              height: 5,
                             ),
                             Text(
                               '#47, Razaak Garden Road, Arumbakkam, Chennai, Tamil Nadu 600106',
@@ -1564,8 +1706,8 @@ class _WebUploadPgState extends State<WebUploadPg> {
                                   decoration: TextDecoration.none,
                                   fontFamily: rubr,
                                   fontWeight: FontWeight.w400,
-                                  color: const Color(0xFF636363),
-                                  fontSize: 13.h),
+                                  color: Color(0xFF636363),
+                                  fontSize: 13),
                             ),
                           ],
                         ),
@@ -1575,17 +1717,17 @@ class _WebUploadPgState extends State<WebUploadPg> {
                       // ),
                       const Spacer(),
                       Padding(
-                        padding: EdgeInsets.only(right: 20.w),
+                        padding: const EdgeInsets.only(right: 20),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            const Icon(
+                          children: const [
+                            Icon(
                               Icons.copyright_rounded,
                               color: Color(0xff00425A),
                               size: 23,
                             ),
                             SizedBox(
-                              width: 1.w,
+                              width: 1,
                             ),
                             Text(
                               '2023 Neverskip. All Rights Reserved',
@@ -1593,8 +1735,8 @@ class _WebUploadPgState extends State<WebUploadPg> {
                                   decoration: TextDecoration.none,
                                   fontFamily: rubr,
                                   fontWeight: FontWeight.w400,
-                                  color: const Color(0xff00425A),
-                                  fontSize: 13.h),
+                                  color: Color(0xff00425A),
+                                  fontSize: 13),
                             ),
                           ],
                         ),
@@ -1618,7 +1760,7 @@ class _WebUploadPgState extends State<WebUploadPg> {
       return 'Please Enter a valid Email Id';
     }
   }
-  // return value!.isNotEmpty && !regex.hasMatch(value)
+  // return value!.isNotEmpty && !regex asMatch(value)
   //     ? 'Please Enter a valid email address'
   //     : null;
 

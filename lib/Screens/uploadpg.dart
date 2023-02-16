@@ -17,6 +17,7 @@ class _UploadpgState extends State<Uploadpg> {
   Widget build(BuildContext context) {
     bool isScreenWide = MediaQuery.of(context).size.width >= 1000;
     return Scaffold(
+        backgroundColor: Colors.white,
         body: isScreenWide
             ? WebUploadPg(
                 RandomKey: widget.RandomKey,

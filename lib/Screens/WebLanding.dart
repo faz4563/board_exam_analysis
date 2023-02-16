@@ -1,7 +1,6 @@
 // ignore_for_file: non_constant_identifier_names, file_names
 
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../utils/fonts.dart';
 import '../utils/images.dart';
@@ -23,13 +22,12 @@ class WebLanding extends StatelessWidget {
   Widget build(BuildContext context) {
     bool isScreenWide = MediaQuery.of(context).size.width >= 1000;
     return SingleChildScrollView(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Padding(
-            padding: EdgeInsets.only(
-                top: isScreenWide ? 30.h : 20.0.h, bottom: 10.h),
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+          const Padding(
+            padding: EdgeInsets.only(top: 30, bottom: 10),
             child: FittedBox(
               fit: BoxFit.contain,
               child: Text(
@@ -37,29 +35,29 @@ class WebLanding extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   decoration: TextDecoration.none,
-                  color: const Color(0xFF313131),
+                  color: Color(0xFF313131),
                   fontFamily: monb,
                   letterSpacing: 0.94,
                   fontWeight: FontWeight.w700,
-                  fontSize: isScreenWide ? 16.h : 18.0.h,
+                  fontSize: 14,
 
                   // fontStyle: FontStyle.italic,
                 ),
               ),
             ),
           ),
-          SizedBox(height: 1.h),
+          const SizedBox(height: 1),
           Column(
-            children: [
+            children: const [
               GradientText(
                 'GET 360 (DEGREE) ANALYSIS OF YOUR',
                 style: TextStyle(
                     decoration: TextDecoration.none,
-                    fontSize: isScreenWide ? 16.h : 16.0.h,
+                    fontSize: 28,
                     letterSpacing: 0.94,
                     fontWeight: FontWeight.w900,
                     fontFamily: rubm),
-                gradient: const LinearGradient(colors: [
+                gradient: LinearGradient(colors: [
                   Color(0xFF25D0DE),
                   Color(0xFFF638F7),
                 ]),
@@ -70,24 +68,24 @@ class WebLanding extends StatelessWidget {
                     decoration: TextDecoration.none,
                     fontWeight: FontWeight.w900,
                     letterSpacing: 0.94,
-                    fontSize: isScreenWide ? 16.h : 16.0.h,
+                    fontSize: 28,
                     fontFamily: rubm),
-                gradient: const LinearGradient(colors: [
+                gradient: LinearGradient(colors: [
                   Color(0xFF25D0DE),
                   Color(0xFFF638F7),
                 ]),
               ),
             ],
           ),
-          SizedBox(
-            height: isScreenWide ? 10.h : 30.0.h,
+          const SizedBox(
+            height: 10,
           ),
           FittedBox(
             fit: BoxFit.contain,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
+              children: const [
                 Text(
                   '1. Enter details of your school',
                   style: TextStyle(
@@ -95,11 +93,11 @@ class WebLanding extends StatelessWidget {
                     decoration: TextDecoration.none,
                     fontFamily: nunr,
                     fontWeight: FontWeight.w900,
-                    color: const Color(0xFF00425A),
-                    fontSize: isScreenWide ? 14.h : 12.0.h,
+                    color: Color(0xFF00394E),
+                    fontSize: 12.0,
                   ),
                 ),
-                SizedBox(width: 10.w),
+                SizedBox(width: 20),
                 Text(
                   '2. Upload files',
                   style: TextStyle(
@@ -107,11 +105,11 @@ class WebLanding extends StatelessWidget {
                     fontFamily: nunr,
                     letterSpacing: 0.35,
                     fontWeight: FontWeight.w900,
-                    color: const Color(0xFF00425A),
-                    fontSize: isScreenWide ? 14.h : 12.0.h,
+                    color: Color(0xFF00394E),
+                    fontSize: 12.0,
                   ),
                 ),
-                SizedBox(width: 10.w),
+                SizedBox(width: 20),
                 Text(
                   '3. Download a detailed report',
                   style: TextStyle(
@@ -119,21 +117,21 @@ class WebLanding extends StatelessWidget {
                     fontFamily: nunr,
                     fontWeight: FontWeight.w900,
                     letterSpacing: 0.35,
-                    color: const Color(0xFF00425A),
-                    fontSize: isScreenWide ? 14.h : 12.0.h,
+                    color: Color(0xFF00394E),
+                    fontSize: 12.0,
                   ),
                 )
               ],
             ),
           ),
-          SizedBox(height: 10.h),
+          const SizedBox(height: 20),
           FittedBox(
             fit: BoxFit.contain,
             child: SizedBox(
               // height: isScreenWide ? 280.h : 250.h,
               // width: isScreenWide ? 160.w : 160.w,
-              height: MediaQuery.of(context).size.height * 0.5,
-              width: MediaQuery.of(context).size.width * 0.48,
+              height: 300,
+              width: 527,
               child: Card(
                 elevation: 1,
                 color: const Color(0xFFFBFBFB),
@@ -148,102 +146,89 @@ class WebLanding extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             // color: Colors.red,
-                            width: isScreenWide
-                                ? MediaQuery.of(context).size.width * 0.17
-                                : 50.w,
-                            height: isScreenWide
-                                ? MediaQuery.of(context).size.height * 0.30
-                                : 80.h,
+                            width: 140,
+                            height: 160,
                             child: Padding(
                               padding: EdgeInsets.only(top: 20),
                               child: Image(
                                 image: AssetImage(analysis),
-                                fit: isScreenWide
-                                    ? BoxFit.cover
-                                    : BoxFit.contain,
+                                fit: BoxFit.cover,
                               ),
                             ),
                           ),
-                          SizedBox(
-                            width: 10.w,
+                          const SizedBox(
+                            width: 40,
                           ),
                           Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Padding(
-                                padding: EdgeInsets.only(top: 30.h),
+                              const Padding(
+                                padding: EdgeInsets.only(top: 20),
                                 child: Text(
-                                  'Features :',
+                                  'FEATURES',
                                   style: TextStyle(
                                     decoration: TextDecoration.none,
-                                    color: const Color(0xFF303030),
+                                    color: Color(0xFF303030),
                                     fontFamily: monb,
                                     letterSpacing: 0.63,
                                     fontWeight: FontWeight.w700,
-                                    fontSize: 16.h,
-
-                                    // fontStyle: FontStyle.italic,
+                                    fontSize: 14,
                                   ),
                                 ),
                               ),
-                              SizedBox(
-                                height: 10.h,
+                              const SizedBox(
+                                height: 10,
                               ),
                               SizedBox(
-                                height: isScreenWide ? 160.h : 150.h,
-                                width: isScreenWide ? 70.w : 70.w,
+                                // color: Colors.red,
+                                height: 140,
+
+                                width: 250,
                                 child: ListView.builder(
                                     itemCount: FeaturesList.length,
                                     physics:
                                         const NeverScrollableScrollPhysics(),
-                                    itemExtent: 30.h,
-                                    itemBuilder: (context, index) => FittedBox(
-                                          fit: BoxFit.cover,
-                                          child: SizedBox(
-                                            height: 200.h,
-                                            width: 70.w,
-                                            child: Row(
-                                              children: [
-                                                Icon(
-                                                  Icons.brightness_1_rounded,
-                                                  color:
-                                                      const Color(0xFFBFDB38),
-                                                  size: 10.h,
-                                                ),
-                                                SizedBox(
-                                                  width: 3.w,
-                                                ),
-                                                Expanded(
-                                                  child: Text(
-                                                    FeaturesList[index],
-                                                    style: TextStyle(
-                                                        fontSize: 14.h,
-                                                        letterSpacing: 0.23,
-                                                        fontFamily: rubm,
-                                                        fontWeight:
-                                                            FontWeight.w500),
-                                                  ),
-                                                )
-                                              ],
+                                    itemExtent: 25,
+                                    itemBuilder: (context, index) => Row(
+                                          children: [
+                                            const Icon(
+                                              Icons.brightness_1_rounded,
+                                              color: Color(0xFFBFDB38),
+                                              size: 7,
                                             ),
-                                          ),
+                                            const SizedBox(
+                                              width: 8,
+                                            ),
+                                            Expanded(
+                                              child: Text(
+                                                FeaturesList[index],
+                                                style: const TextStyle(
+                                                    fontSize: 11,
+                                                    color: Color(0xff303030),
+                                                    letterSpacing: 0.23,
+                                                    fontFamily: rubm,
+                                                    fontWeight:
+                                                        FontWeight.w200),
+                                              ),
+                                            )
+                                          ],
                                         )),
                               ),
                             ],
                           ),
                         ],
                       ),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.02,
+                      const SizedBox(
+                        height: 10,
                       ),
                       Padding(
-                        padding: EdgeInsets.only(bottom: 10.h),
+                        padding: const EdgeInsets.only(bottom: 10),
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              fixedSize: Size(40.w, 30.h),
+                              fixedSize: const Size(120, 30),
                               backgroundColor: ButtonEnabled == true
                                   ? const Color(0xFF1F8A70)
                                   : Colors.grey),
@@ -257,13 +242,14 @@ class WebLanding extends StatelessWidget {
                                               )));
                                 }
                               : null,
-                          child: FittedBox(
+                          child: const FittedBox(
                             fit: BoxFit.contain,
                             child: Text(
-                              'Generate Report',
+                              'GENERATE REPORT',
                               style: TextStyle(
+                                  letterSpacing: 0.63,
                                   fontFamily: rubm,
-                                  fontSize: isScreenWide ? 11.h : 11.h),
+                                  fontSize: 12),
                             ),
                           ),
                         ),
@@ -272,7 +258,7 @@ class WebLanding extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 20.h),
+          const SizedBox(height: 20),
           //
           //
           //
@@ -280,201 +266,261 @@ class WebLanding extends StatelessWidget {
           FittedBox(
               fit: BoxFit.contain,
               child: GlowingText(text: 'We\'d Love To Hear From You')),
-          SizedBox(height: 7.h),
-          FittedBox(
-            fit: BoxFit.contain,
-            child: Text(
-              'If you would like to know more about our products and services, our team would be happy to speak to you.',
-              style: TextStyle(
-                decoration: TextDecoration.none,
-                fontFamily: rubm,
-                letterSpacing: 0.21,
-                color: const Color(0xff6A6A6A),
-                fontStyle: FontStyle.italic,
-                fontWeight: FontWeight.w400,
-                fontSize: 15.h,
-              ),
-            ),
-          ),
-          SizedBox(height: 5.h),
-          FittedBox(
-            fit: BoxFit.contain,
-            child: RichText(
-              text: TextSpan(
-                style: DefaultTextStyle.of(context).style,
-                children: <TextSpan>[
-                  TextSpan(
-                    text: 'Reach us at ',
-                    style: TextStyle(
-                      decoration: TextDecoration.none,
-                      fontFamily: rubr,
-                      letterSpacing: 0.06,
-                      color: const Color(0xff272727),
-                      fontWeight: FontWeight.w100,
-                      fontSize: 15.h,
-                    ),
-                  ),
-                  TextSpan(
-                    text: ' 8880280005',
-                    style: TextStyle(
-                      decoration: TextDecoration.none,
-                      letterSpacing: 0.06,
-                      fontFamily: rubm,
-                      fontWeight: FontWeight.w600,
-                      color: const Color(0xff272727),
-                      fontSize: 15.h,
-                    ),
-                  ),
-                  TextSpan(
-                    text: ' or drop an email to ',
-                    style: TextStyle(
-                      decoration: TextDecoration.none,
-                      fontFamily: rubr,
-                      letterSpacing: 0.06,
-                      color: const Color(0xff272727),
-                      fontWeight: FontWeight.w100,
-                      fontSize: 15.h,
-                    ),
-                  ),
-                  TextSpan(
-                    text: ' hello@neverskip.com',
-                    style: TextStyle(
-                      decoration: TextDecoration.none,
-                      fontFamily: rubm,
-                      fontWeight: FontWeight.w600,
-                      letterSpacing: 0.06,
-                      color: const Color(0xff272727),
-                      fontSize: 15.h,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          SizedBox(height: 10.h),
-          // const Spacer(),
-          SizedBox(
-            height: MediaQuery.of(context).size.width * 0.02,
-          ),
-          Divider(
-            indent: 20.w,
-            endIndent: 20.w,
-            color: const Color(0xffC9C9C9),
-            thickness: 0.5,
-          ),
-
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 10.w,
-                ),
-                child: Column(
+          const SizedBox(height: 7),
+          Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    FittedBox(
-                      fit: BoxFit.contain,
-                      child: Image(
-                        image: const AssetImage(logo),
-                        width: 40.w,
-                        height: 40.h,
+                    SizedBox(
+                      width: 500,
+                      child: RichText(
+                        textAlign: TextAlign.center,
+                        text: const TextSpan(children: <TextSpan>[
+                          TextSpan(
+                              text: 'If you would like to know more about our ',
+                              style: TextStyle(
+                                decoration: TextDecoration.none,
+                                fontFamily: rubm,
+                                letterSpacing: 0.21,
+                                color: Color(0xff343434),
+                                fontStyle: FontStyle.normal,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 12,
+                              )),
+                          TextSpan(
+                              text: 'Products ',
+                              style: TextStyle(
+                                decoration: TextDecoration.none,
+                                fontFamily: rubm,
+                                letterSpacing: 0.21,
+                                color: Color(0xFF1F8A70),
+                                fontStyle: FontStyle.normal,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 12,
+                              )),
+                          TextSpan(
+                              text: 'and ',
+                              style: TextStyle(
+                                decoration: TextDecoration.none,
+                                fontFamily: rubm,
+                                letterSpacing: 0.21,
+                                color: Color(0xff343434),
+                                fontStyle: FontStyle.normal,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 12,
+                              )),
+                          TextSpan(
+                              text: 'Services,',
+                              style: TextStyle(
+                                decoration: TextDecoration.none,
+                                fontFamily: rubm,
+                                letterSpacing: 0.21,
+                                color: Color(0xFF1F8A70),
+                                fontStyle: FontStyle.normal,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 12,
+                                height: 1.5,
+                              )),
+                          TextSpan(
+                              text: ' our team would be happy to speak to you.',
+                              style: TextStyle(
+                                decoration: TextDecoration.none,
+                                fontFamily: rubm,
+                                letterSpacing: 0.21,
+                                color: Color(0xff343434),
+                                fontStyle: FontStyle.normal,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 12,
+                                height: 1.5,
+                              )),
+                        ]),
                       ),
-                    ),
-                    FittedBox(
-                      fit: BoxFit.contain,
-                      child: Text(
-                        'www.neverskip.com',
-                        style: TextStyle(
+                    )
+                  ])),
+          const SizedBox(height: 10),
+          SizedBox(
+            child: FittedBox(
+              fit: BoxFit.contain,
+              child: Center(
+                child: RichText(
+                    textAlign: TextAlign.center,
+                    text: TextSpan(
+                      style: DefaultTextStyle.of(context).style,
+                      children: const <TextSpan>[
+                        TextSpan(
+                          text: 'Reach us at ',
+                          style: TextStyle(
                             decoration: TextDecoration.none,
                             fontFamily: rubr,
                             letterSpacing: 0.06,
-                            fontWeight: FontWeight.bold,
-                            color: const Color(0xFF00425A),
-                            fontSize: 11.h),
-                      ),
-                    ),
-                  ],
-                ),
+                            fontStyle: FontStyle.italic,
+                            color: Color(0xff272727),
+                            fontWeight: FontWeight.w100,
+                            fontSize: 12,
+                          ),
+                        ),
+                        TextSpan(
+                          text: ' 8880280005',
+                          style: TextStyle(
+                            decoration: TextDecoration.none,
+                            letterSpacing: 0.06,
+                            fontFamily: rubm,
+                            fontWeight: FontWeight.w500,
+                            fontStyle: FontStyle.italic,
+                            color: Color(0xff272727),
+                            fontSize: 12,
+                          ),
+                        ),
+                        TextSpan(
+                          text: ' or drop an email to ',
+                          style: TextStyle(
+                            decoration: TextDecoration.none,
+                            fontFamily: rubr,
+                            fontStyle: FontStyle.italic,
+                            letterSpacing: 0.06,
+                            color: Color(0xff272727),
+                            fontWeight: FontWeight.w100,
+                            fontSize: 12,
+                          ),
+                        ),
+                        TextSpan(
+                          text: ' hello@neverskip.com',
+                          style: TextStyle(
+                            decoration: TextDecoration.none,
+                            fontFamily: rubm,
+                            fontWeight: FontWeight.w500,
+                            letterSpacing: 0.06,
+                            fontStyle: FontStyle.italic,
+                            color: Color(0xff272727),
+                            fontSize: 12,
+                            height: 1.5,
+                          ),
+                        ),
+                      ],
+                    )),
               ),
-              SizedBox(
-                width: 10.w,
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: 5.h),
-                child: Column(
+            ),
+          ),
+          const SizedBox(height: 10),
+          const Divider(
+            color: Color(0xffC9C9C9),
+            thickness: 0.5,
+          ),
+          Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 0),
+              child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    FittedBox(
-                      fit: BoxFit.contain,
-                      child: Text(
-                        'Jarulss Software Solutions Pvt Ltd',
-                        style: TextStyle(
-                            decoration: TextDecoration.none,
-                            fontFamily: 'Montserrat',
-                            fontWeight: FontWeight.bold,
-                            color: const Color(0xFF333333),
-                            fontSize: 13.h),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: const [
+                        Image(
+                          image: AssetImage(logo),
+                          width: 140,
+                          height: 50,
+                        ),
+                      ],
+                    ),
+                    const Text(
+                      'www.neverskip.com',
+                      style: TextStyle(
+                          decoration: TextDecoration.none,
+                          fontFamily: rubr,
+                          letterSpacing: 1,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF00425A),
+                          fontSize: 12),
+                    ),
+                    // SizedBox(
+                    //   width: 30.w,
+                    // ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          const Text(
+                            'Jarulss Software Solutions Pvt Ltd',
+                            style: TextStyle(
+                                decoration: TextDecoration.none,
+                                fontFamily: 'Montserrat',
+                                fontWeight: FontWeight.bold,
+                                letterSpacing: 1,
+                                color: Color(0xFF333333),
+                                fontSize: 12),
+                          ),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width * 0.6,
+                            height: 70,
+                            child: Column(
+                              children: [
+                                SizedBox(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.7,
+                                  child: const Text(
+                                    '#47, Razaak Garden Road, Arumbakkam, Chennai - 600106.',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        decoration: TextDecoration.none,
+                                        fontFamily: rubr,
+                                        height: 1.5,
+                                        letterSpacing: 1,
+                                        fontWeight: FontWeight.w400,
+                                        color: Color(0xff343434),
+                                        fontSize: 11),
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                Expanded(
+                                  child: SizedBox(
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: const [
+                                        Icon(
+                                          Icons.copyright_rounded,
+                                          color: Color(0xff00425A),
+                                          size: 16,
+                                        ),
+                                        SizedBox(
+                                          width: 3,
+                                        ),
+                                        FittedBox(
+                                          fit: BoxFit.contain,
+                                          child: Text(
+                                            '2023 Neverskip. All Rights Reserved',
+                                            style: TextStyle(
+                                                decoration: TextDecoration.none,
+                                                fontFamily: rubr,
+                                                fontWeight: FontWeight.w400,
+                                                letterSpacing: 1,
+                                                color: Color(0xff00425A),
+                                                fontSize: 10),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
                       ),
-                    ),
-                    SizedBox(
-                      height: 5.h,
-                    ),
-                    FittedBox(
-                      fit: BoxFit.contain,
-                      child: Text(
-                        '#47, Razaak Garden Road, Arumbakkam, Chennai, Tamil Nadu 600106',
-                        style: TextStyle(
-                            decoration: TextDecoration.none,
-                            fontFamily: rubr,
-                            fontWeight: FontWeight.w400,
-                            color: const Color(0xFF636363),
-                            fontSize: 13.h),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              // SizedBox(
-              //   width: 80.w,
-              // ),
-              const Spacer(),
-              Padding(
-                padding: EdgeInsets.only(right: 20.w),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    const FittedBox(
-                      fit: BoxFit.contain,
-                      child: Icon(
-                        Icons.copyright_rounded,
-                        color: Color(0xff00425A),
-                        size: 23,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 1.w,
-                    ),
-                    FittedBox(
-                      fit: BoxFit.contain,
-                      child: Text(
-                        '2023 Neverskip. All Rights Reserved',
-                        style: TextStyle(
-                            decoration: TextDecoration.none,
-                            fontFamily: rubr,
-                            fontWeight: FontWeight.w400,
-                            color: const Color(0xff00425A),
-                            fontSize: 13.h),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          )
-        ],
-      ),
-    );
+                    )
+                  ]))
+        ]));
   }
 }
