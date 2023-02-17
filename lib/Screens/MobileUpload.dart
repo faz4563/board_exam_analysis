@@ -10,7 +10,6 @@ import 'package:flutter/material.dart';
 import 'package:board_exam_analysis/utils/images.dart';
 import 'package:board_exam_analysis/utils/fonts.dart';
 import 'package:board_exam_analysis/utils/widget.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:http/http.dart' as http;
 import '../model/pdfModel.dart';
 import '../utils/ApiConstants.dart';
@@ -57,9 +56,7 @@ class _MobileUploadState extends State<MobileUpload> {
 
   void uploadFile() async {
     var result = await FilePicker.platform.pickFiles(
-        withReadStream: true,
-        type: FileType.custom,
-        allowedExtensions: ['txt']);
+        withReadStream: true, type: FileType.media, allowedExtensions: ['txt']);
     if (result != null) {
       setState(() {
         objFile = result.files.single;
@@ -150,7 +147,7 @@ class _MobileUploadState extends State<MobileUpload> {
                     image: AssetImage(pgone), fit: BoxFit.cover),
               ),
               child: Column(children: [
-                Padding(
+                const Padding(
                   padding: EdgeInsets.only(
                       top: 29.0, bottom: 10, left: 10, right: 10),
                   child: Text(
@@ -158,7 +155,7 @@ class _MobileUploadState extends State<MobileUpload> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       decoration: TextDecoration.none,
-                      color: const Color(0xFF313131),
+                      color: Color(0xFF313131),
                       fontFamily: monb,
                       letterSpacing: 0.64,
                       fontWeight: FontWeight.w800,
@@ -166,17 +163,17 @@ class _MobileUploadState extends State<MobileUpload> {
                     ),
                   ),
                 ),
-                SizedBox(height: 1.5),
+                const SizedBox(height: 1.5),
                 SizedBox(
                   width: 500,
                   child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: FittedBox(
                       fit: BoxFit.contain,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          GradientText(
+                          const GradientText(
                             'GET 360 (DEGREE) ANALYSIS OF YOUR',
                             style: TextStyle(
                                 decoration: TextDecoration.none,
@@ -184,15 +181,15 @@ class _MobileUploadState extends State<MobileUpload> {
                                 letterSpacing: 0.94,
                                 fontWeight: FontWeight.w900,
                                 fontFamily: rubm),
-                            gradient: const LinearGradient(colors: [
+                            gradient: LinearGradient(colors: [
                               Color(0xFF25D0DE),
                               Color(0xFFF638F7),
                             ]),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 5,
                           ),
-                          GradientText(
+                          const GradientText(
                             'SCHOOL\'S CBSE RESULTS',
                             style: TextStyle(
                                 decoration: TextDecoration.none,
@@ -200,7 +197,7 @@ class _MobileUploadState extends State<MobileUpload> {
                                 letterSpacing: 0.94,
                                 fontSize: 16.0,
                                 fontFamily: rubm),
-                            gradient: const LinearGradient(colors: [
+                            gradient: LinearGradient(colors: [
                               Color(0xFF25D0DE),
                               Color(0xFFF638F7),
                             ]),
@@ -210,7 +207,7 @@ class _MobileUploadState extends State<MobileUpload> {
                     ),
                   ),
                 ),
-                SizedBox(height: 15),
+                const SizedBox(height: 15),
                 Container(
                     width: 338,
                     height: 770,
@@ -242,7 +239,7 @@ class _MobileUploadState extends State<MobileUpload> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsets.symmetric(
+                                    padding: const EdgeInsets.symmetric(
                                         vertical: 10, horizontal: 15),
                                     child: Row(
                                       mainAxisAlignment:
@@ -258,7 +255,7 @@ class _MobileUploadState extends State<MobileUpload> {
                                               color: Color(0xFF448CF3),
                                               fontSize: 14),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 50,
                                         ),
                                         InkWell(
@@ -267,9 +264,9 @@ class _MobileUploadState extends State<MobileUpload> {
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceEvenly,
                                             children: [
-                                              Icon(
+                                              const Icon(
                                                 Icons.arrow_back_ios,
-                                                color: const Color(0xFF8993B9),
+                                                color: Color(0xFF8993B9),
                                                 size: 10,
                                               ),
                                               const Text(
@@ -293,7 +290,8 @@ class _MobileUploadState extends State<MobileUpload> {
                                   //   height: 10.h,
                                   // ),
                                   Padding(
-                                    padding: EdgeInsets.symmetric(vertical: 0),
+                                    padding:
+                                        const EdgeInsets.symmetric(vertical: 0),
                                     child: Column(
                                       mainAxisAlignment:
                                           MainAxisAlignment.start,
@@ -305,26 +303,25 @@ class _MobileUploadState extends State<MobileUpload> {
                                             style: DefaultTextStyle.of(context)
                                                 .style,
                                             children: <TextSpan>[
-                                              TextSpan(
+                                              const TextSpan(
                                                 text: 'School Name ',
                                                 style: TextStyle(
                                                   decoration:
                                                       TextDecoration.none,
                                                   fontFamily: 'Muli',
                                                   letterSpacing: 0.36,
-                                                  color:
-                                                      const Color(0xff828282),
+                                                  color: Color(0xff828282),
                                                   fontWeight: FontWeight.w600,
                                                   fontSize: 13,
                                                 ),
                                               ),
-                                              TextSpan(
+                                              const TextSpan(
                                                 text: '*',
                                                 style: TextStyle(
                                                   decoration:
                                                       TextDecoration.none,
                                                   fontFamily: rubm,
-                                                  color: const Color.fromARGB(
+                                                  color: Color.fromARGB(
                                                       255, 231, 27, 27),
                                                   fontSize: 15,
                                                 ),
@@ -332,7 +329,7 @@ class _MobileUploadState extends State<MobileUpload> {
                                             ],
                                           ),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           height: 5,
                                         ),
                                         SizedBox(
@@ -347,7 +344,7 @@ class _MobileUploadState extends State<MobileUpload> {
                                                 helperText: '',
                                                 helperStyle: const TextStyle(
                                                     fontSize: 1, height: 0),
-                                                errorStyle: TextStyle(
+                                                errorStyle: const TextStyle(
                                                     fontSize: 12, height: 0),
                                                 filled: true,
                                                 fillColor:
@@ -382,10 +379,9 @@ class _MobileUploadState extends State<MobileUpload> {
                                                     5.0,
                                                   ),
                                                 ),
-                                                hintStyle: TextStyle(
+                                                hintStyle: const TextStyle(
                                                     fontSize: 10,
-                                                    color: const Color(
-                                                        0xffA8A8A8)),
+                                                    color: Color(0xffA8A8A8)),
                                                 hintText: "Your School Name",
                                                 prefixStyle: const TextStyle(
                                                     color: Colors.grey),
@@ -423,22 +419,22 @@ class _MobileUploadState extends State<MobileUpload> {
                                     text: TextSpan(
                                       style: DefaultTextStyle.of(context).style,
                                       children: <TextSpan>[
-                                        TextSpan(
+                                        const TextSpan(
                                           text: 'Address ',
                                           style: TextStyle(
                                             decoration: TextDecoration.none,
                                             fontFamily: 'Muli',
-                                            color: const Color(0xff828282),
+                                            color: Color(0xff828282),
                                             fontWeight: FontWeight.w600,
                                             fontSize: 13,
                                           ),
                                         ),
-                                        TextSpan(
+                                        const TextSpan(
                                           text: '*',
                                           style: TextStyle(
                                             decoration: TextDecoration.none,
                                             fontFamily: rubm,
-                                            color: const Color.fromARGB(
+                                            color: Color.fromARGB(
                                                 255, 231, 27, 27),
                                             fontSize: 15,
                                           ),
@@ -465,7 +461,7 @@ class _MobileUploadState extends State<MobileUpload> {
                                           helperText: '',
                                           helperStyle: const TextStyle(
                                               fontSize: 1, height: 0),
-                                          errorStyle: TextStyle(
+                                          errorStyle: const TextStyle(
                                               fontSize: 12, height: 0),
                                           fillColor: const Color(0xffffffff),
                                           contentPadding:
@@ -491,13 +487,13 @@ class _MobileUploadState extends State<MobileUpload> {
                                               5.0,
                                             ),
                                           ),
-                                          hintStyle: TextStyle(
+                                          hintStyle: const TextStyle(
                                               fontSize: 10,
-                                              color: const Color(0xffA8A8A8)),
+                                              color: Color(0xffA8A8A8)),
                                           hintText: "School Address",
                                           prefixStyle: const TextStyle(
                                               color: Colors.grey),
-                                          border: OutlineInputBorder()),
+                                          border: const OutlineInputBorder()),
                                       keyboardType: TextInputType.name,
                                       validator: (value) {
                                         if (value!.isEmpty) {
@@ -527,22 +523,22 @@ class _MobileUploadState extends State<MobileUpload> {
                                     text: TextSpan(
                                       style: DefaultTextStyle.of(context).style,
                                       children: <TextSpan>[
-                                        TextSpan(
+                                        const TextSpan(
                                           text: 'Enter Your City Name',
                                           style: TextStyle(
                                             decoration: TextDecoration.none,
                                             fontFamily: 'Muli',
-                                            color: const Color(0xff828282),
+                                            color: Color(0xff828282),
                                             fontWeight: FontWeight.w600,
                                             fontSize: 13,
                                           ),
                                         ),
-                                        TextSpan(
+                                        const TextSpan(
                                           text: '*',
                                           style: TextStyle(
                                             decoration: TextDecoration.none,
                                             fontFamily: rubm,
-                                            color: const Color.fromARGB(
+                                            color: Color.fromARGB(
                                                 255, 231, 27, 27),
                                             fontSize: 15,
                                           ),
@@ -550,7 +546,7 @@ class _MobileUploadState extends State<MobileUpload> {
                                       ],
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 5,
                                   ),
                                   SizedBox(
@@ -565,7 +561,7 @@ class _MobileUploadState extends State<MobileUpload> {
                                           helperText: '',
                                           helperStyle: const TextStyle(
                                               fontSize: 1, height: 0),
-                                          errorStyle: TextStyle(
+                                          errorStyle: const TextStyle(
                                               fontSize: 12, height: 0),
                                           filled: true,
                                           fillColor: const Color(0xffffffff),
@@ -592,9 +588,9 @@ class _MobileUploadState extends State<MobileUpload> {
                                               5.0,
                                             ),
                                           ),
-                                          hintStyle: TextStyle(
+                                          hintStyle: const TextStyle(
                                               fontSize: 10,
-                                              color: const Color(0xffA8A8A8)),
+                                              color: Color(0xffA8A8A8)),
                                           hintText: "City",
                                           prefixStyle: const TextStyle(
                                               color: Colors.grey),
@@ -628,22 +624,22 @@ class _MobileUploadState extends State<MobileUpload> {
                                     text: TextSpan(
                                       style: DefaultTextStyle.of(context).style,
                                       children: <TextSpan>[
-                                        TextSpan(
+                                        const TextSpan(
                                           text: 'State ',
                                           style: TextStyle(
                                             decoration: TextDecoration.none,
                                             fontFamily: 'Muli',
-                                            color: const Color(0xff828282),
+                                            color: Color(0xff828282),
                                             fontWeight: FontWeight.w600,
                                             fontSize: 13,
                                           ),
                                         ),
-                                        TextSpan(
+                                        const TextSpan(
                                           text: '*',
                                           style: TextStyle(
                                             decoration: TextDecoration.none,
                                             fontFamily: rubm,
-                                            color: const Color.fromARGB(
+                                            color: Color.fromARGB(
                                                 255, 231, 27, 27),
                                             fontSize: 15,
                                           ),
@@ -651,7 +647,7 @@ class _MobileUploadState extends State<MobileUpload> {
                                       ],
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 5,
                                   ),
                                   SizedBox(
@@ -659,14 +655,14 @@ class _MobileUploadState extends State<MobileUpload> {
                                     height: 60,
                                     child: DropdownButtonFormField<String>(
                                       value: selectedState,
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         fontSize: 10,
                                       ),
-                                      hint: Text(
+                                      hint: const Text(
                                         'Select Your State',
                                         style: TextStyle(
                                             fontSize: 10,
-                                            color: const Color(0xffA8A8A8)),
+                                            color: Color(0xffA8A8A8)),
                                       ),
                                       onChanged: (value) => setState(() {
                                         selectedState = value;
@@ -677,7 +673,7 @@ class _MobileUploadState extends State<MobileUpload> {
                                           helperText: '',
                                           helperStyle: const TextStyle(
                                               fontSize: 1, height: 0),
-                                          errorStyle: TextStyle(
+                                          errorStyle: const TextStyle(
                                               fontSize: 12, height: 0),
                                           filled: true,
                                           fillColor: const Color(0xffffffff),
@@ -704,9 +700,9 @@ class _MobileUploadState extends State<MobileUpload> {
                                               5.0,
                                             ),
                                           ),
-                                          hintStyle: TextStyle(
+                                          hintStyle: const TextStyle(
                                               fontSize: 10,
-                                              color: const Color(0xffA8A8A8)),
+                                              color: Color(0xffA8A8A8)),
                                           hintText: "Select your State",
                                           prefixStyle: const TextStyle(
                                               color: Colors.grey),
@@ -756,22 +752,22 @@ class _MobileUploadState extends State<MobileUpload> {
                                           style: DefaultTextStyle.of(context)
                                               .style,
                                           children: <TextSpan>[
-                                            TextSpan(
+                                            const TextSpan(
                                               text: 'Phone Number',
                                               style: TextStyle(
                                                 decoration: TextDecoration.none,
                                                 fontFamily: 'Muli',
-                                                color: const Color(0xff828282),
+                                                color: Color(0xff828282),
                                                 fontWeight: FontWeight.w600,
                                                 fontSize: 13,
                                               ),
                                             ),
-                                            TextSpan(
+                                            const TextSpan(
                                               text: '*',
                                               style: TextStyle(
                                                 decoration: TextDecoration.none,
                                                 fontFamily: rubm,
-                                                color: const Color.fromARGB(
+                                                color: Color.fromARGB(
                                                     255, 231, 27, 27),
                                                 fontSize: 15,
                                               ),
@@ -779,7 +775,7 @@ class _MobileUploadState extends State<MobileUpload> {
                                           ],
                                         ),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 5,
                                       ),
                                       SizedBox(
@@ -795,7 +791,7 @@ class _MobileUploadState extends State<MobileUpload> {
                                               helperText: '',
                                               helperStyle: const TextStyle(
                                                   fontSize: 1, height: 0),
-                                              errorStyle: TextStyle(
+                                              errorStyle: const TextStyle(
                                                   fontSize: 12, height: 0),
                                               fillColor:
                                                   const Color(0xffffffff),
@@ -826,10 +822,9 @@ class _MobileUploadState extends State<MobileUpload> {
                                                   5.0,
                                                 ),
                                               ),
-                                              hintStyle: TextStyle(
+                                              hintStyle: const TextStyle(
                                                   fontSize: 10,
-                                                  color:
-                                                      const Color(0xffA8A8A8)),
+                                                  color: Color(0xffA8A8A8)),
                                               hintText: "Type Phone Number",
                                               prefixStyle: const TextStyle(
                                                   color: Colors.grey),
@@ -851,22 +846,22 @@ class _MobileUploadState extends State<MobileUpload> {
                                     text: TextSpan(
                                       style: DefaultTextStyle.of(context).style,
                                       children: <TextSpan>[
-                                        TextSpan(
+                                        const TextSpan(
                                           text: 'Email',
                                           style: TextStyle(
                                             decoration: TextDecoration.none,
                                             fontFamily: 'Muli',
-                                            color: const Color(0xff828282),
+                                            color: Color(0xff828282),
                                             fontWeight: FontWeight.w600,
                                             fontSize: 13,
                                           ),
                                         ),
-                                        TextSpan(
+                                        const TextSpan(
                                           text: '*',
                                           style: TextStyle(
                                             decoration: TextDecoration.none,
                                             fontFamily: rubm,
-                                            color: const Color.fromARGB(
+                                            color: Color.fromARGB(
                                                 255, 231, 27, 27),
                                             fontSize: 15,
                                           ),
@@ -874,7 +869,7 @@ class _MobileUploadState extends State<MobileUpload> {
                                       ],
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 5,
                                   ),
                                   SizedBox(
@@ -890,7 +885,7 @@ class _MobileUploadState extends State<MobileUpload> {
                                           helperText: '',
                                           helperStyle: const TextStyle(
                                               fontSize: 1, height: 0),
-                                          errorStyle: TextStyle(
+                                          errorStyle: const TextStyle(
                                               fontSize: 12, height: 0),
                                           fillColor: const Color(0xffffffff),
                                           contentPadding:
@@ -916,9 +911,9 @@ class _MobileUploadState extends State<MobileUpload> {
                                               5.0,
                                             ),
                                           ),
-                                          hintStyle: TextStyle(
+                                          hintStyle: const TextStyle(
                                               fontSize: 10,
-                                              color: const Color(0xffA8A8A8)),
+                                              color: Color(0xffA8A8A8)),
                                           hintText: "Type Email Id",
                                           prefixStyle: const TextStyle(
                                               color: Colors.grey),
@@ -939,8 +934,8 @@ class _MobileUploadState extends State<MobileUpload> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
+                                  const Padding(
+                                    padding: EdgeInsets.symmetric(
                                         horizontal: 16, vertical: 5),
                                     child: Text(
                                       "Upload your file",
@@ -948,11 +943,11 @@ class _MobileUploadState extends State<MobileUpload> {
                                           decoration: TextDecoration.none,
                                           fontFamily: 'Montserrat',
                                           fontWeight: FontWeight.bold,
-                                          color: const Color(0xFF448CF3),
+                                          color: Color(0xFF448CF3),
                                           fontSize: 14),
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 15,
                                   ),
                                   Center(
@@ -972,10 +967,10 @@ class _MobileUploadState extends State<MobileUpload> {
                                                 crossAxisAlignment:
                                                     CrossAxisAlignment.center,
                                                 children: [
-                                                  SizedBox(
+                                                  const SizedBox(
                                                     height: 10,
                                                   ),
-                                                  Text(
+                                                  const Text(
                                                     'Drop a CSV file or',
                                                     style: TextStyle(
                                                         decoration:
@@ -983,11 +978,11 @@ class _MobileUploadState extends State<MobileUpload> {
                                                         fontFamily: 'Muli',
                                                         fontWeight:
                                                             FontWeight.bold,
-                                                        color: const Color(
-                                                            0xFF303030),
+                                                        color:
+                                                            Color(0xFF303030),
                                                         fontSize: 13),
                                                   ),
-                                                  SizedBox(
+                                                  const SizedBox(
                                                     height: 15,
                                                   ),
                                                   FittedBox(
@@ -1003,7 +998,8 @@ class _MobileUploadState extends State<MobileUpload> {
                                                                             15.0),
                                                               ),
                                                               fixedSize:
-                                                                  Size(87, 27),
+                                                                  const Size(
+                                                                      87, 27),
                                                               backgroundColor:
                                                                   const Color(
                                                                       0xFFEC8D3C)),
@@ -1027,10 +1023,10 @@ class _MobileUploadState extends State<MobileUpload> {
                                                             width: 12,
                                                             height: 12,
                                                           ),
-                                                          SizedBox(
+                                                          const SizedBox(
                                                             width: 5,
                                                           ),
-                                                          Expanded(
+                                                          const Expanded(
                                                             child: Text(
                                                               'Import',
                                                               style: TextStyle(
@@ -1053,15 +1049,15 @@ class _MobileUploadState extends State<MobileUpload> {
                                                     children: [
                                                       Text(
                                                         fileName,
-                                                        style: TextStyle(
-                                                            color: const Color(
+                                                        style: const TextStyle(
+                                                            color: Color(
                                                                 0xff303030),
                                                             letterSpacing: 1,
                                                             fontWeight:
                                                                 FontWeight.w600,
                                                             fontSize: 15),
                                                       ),
-                                                      SizedBox(
+                                                      const SizedBox(
                                                         height: 5,
                                                       ),
                                                       Row(
@@ -1074,13 +1070,13 @@ class _MobileUploadState extends State<MobileUpload> {
                                                             width: 20,
                                                             height: 20,
                                                           ),
-                                                          SizedBox(
+                                                          const SizedBox(
                                                             width: 4,
                                                           ),
-                                                          Text(
+                                                          const Text(
                                                             "Processing ... Please Wait !!!",
                                                             style: TextStyle(
-                                                                color: const Color(
+                                                                color: Color(
                                                                     0xff303030),
                                                                 fontWeight:
                                                                     FontWeight
@@ -1107,13 +1103,13 @@ class _MobileUploadState extends State<MobileUpload> {
                                                                 width: 39,
                                                                 height: 39,
                                                               ),
-                                                              SizedBox(
+                                                              const SizedBox(
                                                                 width: 5,
                                                               ),
-                                                              Text(
+                                                              const Text(
                                                                 " Your report is ready!",
                                                                 style: TextStyle(
-                                                                    color: const Color(
+                                                                    color: Color(
                                                                         0xff303030),
                                                                     fontWeight:
                                                                         FontWeight
@@ -1125,13 +1121,13 @@ class _MobileUploadState extends State<MobileUpload> {
                                                               ),
                                                             ],
                                                           ),
-                                                          SizedBox(
+                                                          const SizedBox(
                                                             height: 5,
                                                           ),
-                                                          Text(
+                                                          const Text(
                                                             "Please click the download button to continue.",
                                                             style: TextStyle(
-                                                                color: const Color(
+                                                                color: Color(
                                                                     0xff343434),
                                                                 fontWeight:
                                                                     FontWeight
@@ -1144,11 +1140,11 @@ class _MobileUploadState extends State<MobileUpload> {
                                                       )
                                                     : null),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 20,
                                   ),
                                   Padding(
-                                    padding: EdgeInsets.only(bottom: 10),
+                                    padding: const EdgeInsets.only(bottom: 10),
                                     child: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
@@ -1160,12 +1156,13 @@ class _MobileUploadState extends State<MobileUpload> {
                                                   style: ElevatedButton.styleFrom(
                                                       shape:
                                                           const BeveledRectangleBorder(),
-                                                      fixedSize: Size(68, 28),
+                                                      fixedSize:
+                                                          const Size(68, 28),
                                                       backgroundColor:
                                                           const Color(
                                                               0xFF1D1D1D)),
                                                   onPressed: () {},
-                                                  child: Text(
+                                                  child: const Text(
                                                     'Clear',
                                                     style: TextStyle(
                                                         fontFamily: rubm,
@@ -1174,7 +1171,7 @@ class _MobileUploadState extends State<MobileUpload> {
                                                 ),
                                               )
                                             : Container(),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 5,
                                         ),
                                         SizedBox(
@@ -1186,7 +1183,7 @@ class _MobileUploadState extends State<MobileUpload> {
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             3)),
-                                                fixedSize: Size(180, 38),
+                                                fixedSize: const Size(180, 38),
                                                 backgroundColor:
                                                     uploadPressed == 3
                                                         ? const Color(
@@ -1205,7 +1202,7 @@ class _MobileUploadState extends State<MobileUpload> {
                                                     MainAxisAlignment
                                                         .spaceAround,
                                                 children: [
-                                                  FittedBox(
+                                                  const FittedBox(
                                                     fit: BoxFit.contain,
                                                     child: Icon(
                                                       Icons.download_sharp,
@@ -1235,7 +1232,7 @@ class _MobileUploadState extends State<MobileUpload> {
                               )
                             ])))
               ])),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: SizedBox(
@@ -1244,7 +1241,7 @@ class _MobileUploadState extends State<MobileUpload> {
                   text: 'We\'d Love To Hear From You', fontSize: 13),
             ),
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
@@ -1255,14 +1252,14 @@ class _MobileUploadState extends State<MobileUpload> {
                       width: 500,
                       child: RichText(
                         textAlign: TextAlign.center,
-                        text: TextSpan(children: <TextSpan>[
+                        text: const TextSpan(children: <TextSpan>[
                           TextSpan(
                               text: 'If you would like to know more about our ',
                               style: TextStyle(
                                 decoration: TextDecoration.none,
                                 fontFamily: rubm,
                                 letterSpacing: 0.21,
-                                color: const Color(0xff343434),
+                                color: Color(0xff343434),
                                 fontStyle: FontStyle.normal,
                                 fontWeight: FontWeight.w400,
                                 fontSize: 12,
@@ -1273,7 +1270,7 @@ class _MobileUploadState extends State<MobileUpload> {
                                 decoration: TextDecoration.none,
                                 fontFamily: rubm,
                                 letterSpacing: 0.21,
-                                color: const Color(0xFF1F8A70),
+                                color: Color(0xFF1F8A70),
                                 fontStyle: FontStyle.normal,
                                 fontWeight: FontWeight.w600,
                                 fontSize: 12,
@@ -1284,7 +1281,7 @@ class _MobileUploadState extends State<MobileUpload> {
                                 decoration: TextDecoration.none,
                                 fontFamily: rubm,
                                 letterSpacing: 0.21,
-                                color: const Color(0xff343434),
+                                color: Color(0xff343434),
                                 fontStyle: FontStyle.normal,
                                 fontWeight: FontWeight.w400,
                                 fontSize: 12,
@@ -1295,7 +1292,7 @@ class _MobileUploadState extends State<MobileUpload> {
                                 decoration: TextDecoration.none,
                                 fontFamily: rubm,
                                 letterSpacing: 0.21,
-                                color: const Color(0xFF1F8A70),
+                                color: Color(0xFF1F8A70),
                                 fontStyle: FontStyle.normal,
                                 fontWeight: FontWeight.w600,
                                 fontSize: 12,
@@ -1307,7 +1304,7 @@ class _MobileUploadState extends State<MobileUpload> {
                                 decoration: TextDecoration.none,
                                 fontFamily: rubm,
                                 letterSpacing: 0.21,
-                                color: const Color(0xff343434),
+                                color: Color(0xff343434),
                                 fontStyle: FontStyle.normal,
                                 fontWeight: FontWeight.w400,
                                 fontSize: 12,
@@ -1317,7 +1314,7 @@ class _MobileUploadState extends State<MobileUpload> {
                       ),
                     )
                   ])),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           SizedBox(
             width: 100,
             child: Center(
@@ -1326,19 +1323,19 @@ class _MobileUploadState extends State<MobileUpload> {
                   text: TextSpan(
                     style: DefaultTextStyle.of(context).style,
                     children: <TextSpan>[
-                      TextSpan(
+                      const TextSpan(
                         text: 'Reach us at ',
                         style: TextStyle(
                           decoration: TextDecoration.none,
                           fontFamily: rubr,
                           letterSpacing: 0.06,
                           fontStyle: FontStyle.italic,
-                          color: const Color(0xff272727),
+                          color: Color(0xff272727),
                           fontWeight: FontWeight.w100,
                           fontSize: 12,
                         ),
                       ),
-                      TextSpan(
+                      const TextSpan(
                         text: ' 8880280005',
                         style: TextStyle(
                           decoration: TextDecoration.none,
@@ -1346,23 +1343,23 @@ class _MobileUploadState extends State<MobileUpload> {
                           fontFamily: rubm,
                           fontWeight: FontWeight.w500,
                           fontStyle: FontStyle.italic,
-                          color: const Color(0xff272727),
+                          color: Color(0xff272727),
                           fontSize: 12,
                         ),
                       ),
-                      TextSpan(
+                      const TextSpan(
                         text: ' or \ndrop an email to ',
                         style: TextStyle(
                           decoration: TextDecoration.none,
                           fontFamily: rubr,
                           fontStyle: FontStyle.italic,
                           letterSpacing: 0.06,
-                          color: const Color(0xff272727),
+                          color: Color(0xff272727),
                           fontWeight: FontWeight.w100,
                           fontSize: 12,
                         ),
                       ),
-                      TextSpan(
+                      const TextSpan(
                         text: ' hello@neverskip.com',
                         style: TextStyle(
                           decoration: TextDecoration.none,
@@ -1370,7 +1367,7 @@ class _MobileUploadState extends State<MobileUpload> {
                           fontWeight: FontWeight.w500,
                           letterSpacing: 0.06,
                           fontStyle: FontStyle.italic,
-                          color: const Color(0xff272727),
+                          color: Color(0xff272727),
                           fontSize: 12,
                           height: 1.5,
                         ),
@@ -1379,7 +1376,7 @@ class _MobileUploadState extends State<MobileUpload> {
                   )),
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           const Divider(
             color: Color(0xffC9C9C9),
             thickness: 0.5,
@@ -1394,42 +1391,42 @@ class _MobileUploadState extends State<MobileUpload> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Image(
-                      image: const AssetImage(logo),
+                    const Image(
+                      image: AssetImage(logo),
                       width: 140,
                       height: 50,
                     ),
                   ],
                 ),
-                Text(
+                const Text(
                   'www.neverskip.com',
                   style: TextStyle(
                       decoration: TextDecoration.none,
                       fontFamily: rubr,
                       letterSpacing: 1,
                       fontWeight: FontWeight.bold,
-                      color: const Color(0xFF00425A),
+                      color: Color(0xFF00425A),
                       fontSize: 12),
                 ),
                 // SizedBox(
                 //   width: 30.w,
                 // ),
                 Padding(
-                  padding: EdgeInsets.only(top: 10),
+                  padding: const EdgeInsets.only(top: 10),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text(
+                      const Text(
                         'Jarulss Software Solutions Pvt Ltd',
                         style: TextStyle(
                             decoration: TextDecoration.none,
                             fontFamily: 'Montserrat',
                             fontWeight: FontWeight.bold,
-                            color: const Color(0xFF333333),
+                            color: Color(0xFF333333),
                             fontSize: 12),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       SizedBox(
